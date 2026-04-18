@@ -32,9 +32,9 @@ class FailoverHandler:
         return self._switch_count
 
     async def initialize(self):
-        """اختيار أفضل بروكسي كبداية."""
+        """اختيار أسرع بروكسي كبداية."""
         async with self._lock:
-            best = self.manager.get_best_proxy()
+            best = self.manager.get_fastest_proxy()
             if best:
                 self._current_proxy = best
                 logger.info(
@@ -49,7 +49,7 @@ class FailoverHandler:
         """إرجاع البروكسي النشط."""
         async with self._lock:
             if self._current_proxy is None:
-                best = self.manager.get_best_proxy()
+                best = self.manager.get_fastest_proxy()
                 if best:
                     self._current_proxy = best
             return self._current_proxy
@@ -75,11 +75,11 @@ class FailoverHandler:
 
     async def refresh_best(self):
         """
-        إعادة اختيار الأفضل بعد جولة فحص.
+        إعادة اختيار الأسرع بعد جولة فحص.
         يُستدعى من الـ checker فقط.
         """
         async with self._lock:
-            best = self.manager.get_best_proxy()
+            best = self.manager.get_fastest_proxy()
             if best is None:
                 if self._current_proxy is not None:
                     logger.warning("[REFRESH] No alive proxy after check!")

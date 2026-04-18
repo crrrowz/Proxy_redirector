@@ -20,6 +20,7 @@ from python_socks.async_.asyncio import Proxy
 from python_socks import ProxyType
 
 from failover_handler import FailoverHandler
+from traffic_logger import TrafficLogger
 import config
 
 logger = logging.getLogger("http_proxy")
@@ -66,7 +67,12 @@ class HttpProxyServer:
     async def stop(self):
         if self._server:
             self._server.close()
-            await self._server.wait_closed()
+            try:
+                await asyncio.wait_for(self._server.wait_closed(), timeout=1.0)
+            except asyncio.TimeoutError:
+                pass
+            except Exception:
+                pass
             logger.info("[HTTP-PROXY] Stopped")
 
     def _is_whitelisted(self, client_ip: str) -> bool:
@@ -165,10 +171,10 @@ class HttpProxyServer:
                 return
 
             if method == "CONNECT":
-                await self._handle_connect(target, reader, writer)
+                await self._handle_connect(target, client_ip, reader, writer)
             else:
                 await self._handle_http(
-                    method, target, headers, raw_headers,
+                    method, target, client_ip, headers, raw_headers,
                     first_line, reader, writer
                 )
 
@@ -187,7 +193,7 @@ class HttpProxyServer:
             except Exception:
                 pass
 
-    async def _handle_connect(self, target, reader, writer):
+    async def _handle_connect(self, target, client_ip, reader, writer):
         """
         معالجة CONNECT — أنفاق HTTPS
         الهاتف يرسل: CONNECT example.com:443 HTTP/1.1
@@ -204,11 +210,16 @@ class HttpProxyServer:
             host = target
             port = 443
 
+        tlog = TrafficLogger.get_instance()
+
         # الاتصال عبر البروكسي
         up_reader, up_writer = await self._connect_via_proxy(host, port)
         if up_reader is None:
+            tlog.log_request(client_ip, "HTTP", f"{host}:{port}", "CONNECT", "failed")
             await self._send_error(writer, 502, "Bad Gateway")
             return
+
+        tlog.log_request(client_ip, "HTTP", f"{host}:{port}", "CONNECT", "success")
 
         # رد بالنجاح
         writer.write(b"HTTP/1.1 200 Connection Established\r\n\r\n")
@@ -218,7 +229,7 @@ class HttpProxyServer:
         await self._relay(reader, writer, up_reader, up_writer)
 
     async def _handle_http(
-        self, method, target, headers, raw_headers,
+        self, method, target, client_ip, headers, raw_headers,
         first_line, reader, writer
     ):
         """
@@ -240,11 +251,16 @@ class HttpProxyServer:
             headers.get("upgrade", "").lower() == "websocket"
         )
 
+        tlog = TrafficLogger.get_instance()
+
         # الاتصال عبر البروكسي
         up_reader, up_writer = await self._connect_via_proxy(host, port)
         if up_reader is None:
+            tlog.log_request(client_ip, "HTTP", f"{host}:{port}", method, "failed")
             await self._send_error(writer, 502, "Bad Gateway")
             return
+
+        tlog.log_request(client_ip, "HTTP", f"{host}:{port}", method, "success")
 
         # إعادة بناء الطلب مع مسار نسبي
         path = parsed.path or "/"

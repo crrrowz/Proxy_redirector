@@ -13,6 +13,7 @@ from python_socks.async_.asyncio import Proxy
 from python_socks import ProxyType
 
 from failover_handler import FailoverHandler
+from traffic_logger import TrafficLogger
 import config
 
 logger = logging.getLogger("socks5_server")
@@ -73,7 +74,12 @@ class Socks5Server:
     async def stop(self):
         if self._server:
             self._server.close()
-            await self._server.wait_closed()
+            try:
+                await asyncio.wait_for(self._server.wait_closed(), timeout=1.0)
+            except asyncio.TimeoutError:
+                pass
+            except Exception:
+                pass
             logger.info("[SERVER] Stopped")
 
     async def _handle_client(self, reader, writer):
@@ -101,12 +107,15 @@ class Socks5Server:
             }
 
             # الاتصال عبر البروكسي — بدون قتل أي بروكسي
+            tlog = TrafficLogger.get_instance()
             up_reader, up_writer = await self._connect_via_proxy(
                 target_host, target_port, writer
             )
             if up_reader is None:
+                tlog.log_request(client_ip, "SOCKS5", f"{target_host}:{target_port}", "CONNECT", "failed")
                 return
 
+            tlog.log_request(client_ip, "SOCKS5", f"{target_host}:{target_port}", "CONNECT", "success")
             await self._send_success_reply(writer)
             await self._relay(reader, writer, up_reader, up_writer)
 

@@ -279,6 +279,19 @@ class ProxyManager:
         alive = self.get_alive_proxies()
         return alive[0] if alive else None
 
+    def get_fastest_proxy(self) -> Optional[dict]:
+        """إرجاع أسرع بروكسي من حيث الاستجابة (ping)."""
+        alive = self.get_alive_proxies()
+        if not alive:
+            return None
+        
+        # ترتيب حسب السرعة (الأقل هو الأفضل)
+        def get_speed(p):
+            return self.status.get(p["id"], {}).get("response_time_ms") or 9999.0
+            
+        alive.sort(key=get_speed)
+        return alive[0]
+
     def get_next_proxy(self, current_id: str) -> Optional[dict]:
         alive = self.get_alive_proxies()
         if not alive:

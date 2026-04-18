@@ -29,6 +29,7 @@ from proxy_checker import find_alive_proxies, recheck_alive_proxies, check_batch
 from failover_handler import FailoverHandler
 from socks5_server import Socks5Server
 from http_proxy_server import HttpProxyServer
+from traffic_logger import TrafficLogger
 
 # ── Logging ──
 LOG_FORMAT = "%(asctime)s | %(name)-16s | %(levelname)-7s | %(message)s"
@@ -189,6 +190,33 @@ def render_dashboard(
             f"{marker}{i:>2}  {addr:<22} {ptype:<7} {status_s} {spd_s} {score:>6.1f} {fails:>5d}"
         )
         lines.append(_box_line(row))
+
+    # ── القسم 4: سجل الحركة ──
+    tlog = TrafficLogger.get_instance()
+    tstats = tlog.get_stats()
+    lines.extend(_section_header(
+        f"📝  TRAFFIC LOG   "
+        f"[ {tstats['total_requests']} requests │ {tstats['total_bytes_human']} │ "
+        f"{tstats['unique_clients']} clients ]"
+    ))
+
+    recent = tlog.get_recent(8)
+    if recent:
+        for r in reversed(recent):
+            t = r['time']
+            ip = r['client_ip']
+            proto = r['protocol']
+            method = r['method']
+            target = r['target']
+            status = '✓' if r['status'] == 'success' else '✗'
+            # اختصار الهدف
+            if len(target) > 28:
+                target = target[:25] + "..."
+            lines.append(_box_line(
+                f"  {t}  {status} {ip:<16s} {proto:<6s} {method:<8s} {target}"
+            ))
+    else:
+        lines.append(_box_line("  No traffic yet"))
 
     # ── Footer ──
     lines.append(f"  ╠{'═' * W}╣")
@@ -395,7 +423,12 @@ async def main():
 
 
 if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        print("\n\n  [EXIT] Stopped by user\n")
+    import sys
+    if "--gui" in sys.argv or getattr(sys, 'frozen', False):
+        from gui import launch
+        launch()
+    else:
+        try:
+            asyncio.run(main())
+        except KeyboardInterrupt:
+            print("\n\n  [EXIT] Stopped by user\n")

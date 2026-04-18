@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Redirector Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="titlebar">
+        <span>Proxy Redirector v2.0 — Network Edition</span>
+        <div class="window-controls">
+            <div class="btn-win" onclick="minimize()">—</div>
+            <div class="btn-win" onclick="toggle_maximize()">☐</div>
+            <div class="btn-win btn-close" onclick="close_app()">✕</div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <div class="header">
+            <div>
+                <h1>Dashboard</h1>
+                <div id="engine-status-text" style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">Loading...</div>
+            </div>
+            <div class="controls">
+                <button id="btn-start" class="btn primary" onclick="startEngine()" style="display:none">Start Proxy Engine</button>
+                <button id="btn-stop" class="btn danger" onclick="stopEngine()" style="display:none">Stop Proxy Engine</button>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Server Info -->
+            <div class="card">
+                <div class="card-title">🔌 Server Info</div>
+                <div id="server-info">Loading...</div>
+                
+                <div class="card-title" style="margin-top: 20px;">Network Access</div>
+                <div id="network-ips">Loading...</div>
+
+                <div class="card-title" style="margin-top: 20px;">Active Proxy</div>
+                <div class="info-row">
+                    <span id="active-proxy">--</span>
+                </div>
+            </div>
+
+            <!-- Connected Clients -->
+            <div class="card">
+                <div class="card-title">
+                    👥 Connected Clients
+                    <span class="badge" style="background:#334155"><span id="clients-count">0</span> Total</span>
+                </div>
+                <div style="overflow-y:auto; flex:1">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Client IP</th>
+                                <th>Protocol</th>
+                                <th>Target</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clients-table-body">
+                            <tr><td colspan="3" style="text-align:center">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pool Stats -->
+            <div class="card full-width">
+                <div class="card-title">
+                    📊 Proxy Pool Status
+                    <span id="pool-stats" style="color:var(--text-muted); text-transform:none; font-weight:normal">Loading...</span>
+                </div>
+                <div style="max-height: 250px; overflow-y:auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 40px">#</th>
+                                <th>IP:Port</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Speed</th>
+                                <th>Score</th>
+                                <th>Fails</th>
+                            </tr>
+                        </thead>
+                        <tbody id="proxy-table-body">
+                            <tr><td colspan="7" style="text-align:center">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Traffic Log -->
+            <div class="card full-width">
+                <div class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        📝 Traffic Log
+                        <span id="traffic-stats" style="color:var(--text-muted); text-transform:none; font-weight:normal; margin-left: 10px;">Loading...</span>
+                    </div>
+                    <button class="btn" style="padding:4px 8px; font-size:12px" onclick="clearTraffic()">Clear Log</button>
+                </div>
+                <div style="max-height: 250px; overflow-y:auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 80px">Time</th>
+                                <th style="width: 30px">St</th>
+                                <th>Client IP</th>
+                                <th>Proto</th>
+                                <th>Method</th>
+                                <th>Target</th>
+                            </tr>
+                        </thead>
+                        <tbody id="traffic-table-body">
+                            <tr><td colspan="6" style="text-align:center">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        :root {
+            --bg: #0a0e17;
+            --primary: #3b82f6;
+            --text: #f1f5f9;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            -webkit-user-select: none;
+        }
+        /* Title Bar */
+        .titlebar {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 32px;
+            background: rgba(0, 0, 0, 0.2);
+            -webkit-app-region: drag;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 12px;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+        .window-controls {
+            display: flex;
+            -webkit-app-region: no-drag;
+        }
+        .btn {
+            width: 46px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: #94a3b8;
+        }
+        .btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+        .btn-close:hover { background: #e81123; color: white; }
+        
+        .loader-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(59, 130, 246, 0.2);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="titlebar">
+        <span>Proxy Redirector</span>
+        <div class="window-controls">
+            <div class="btn" onclick="pywebview.api.minimize()">—</div>
+            <div class="btn" onclick="pywebview.api.toggle_maximize()">☐</div>
+            <div class="btn btn-close" onclick="pywebview.api.close()">✕</div>
+        </div>
+    </div>
+    <div class="loader-container">
+        <div class="spinner"></div>
+        <div style="color: #94a3b8; font-size: 14px;">Starting Proxy Engine...</div>
+    </div>
+</body>
+</html>
