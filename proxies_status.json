@@ -1,0 +1,4016 @@
+{
+  "proxy_05608": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:54:38.765400+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T01:45:57.777457+00:00",
+    "total_checks": 8,
+    "total_successes": 3
+  },
+  "proxy_01498": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:54:38.765400+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_04261": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:54:38.765400+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T01:35:54.764625+00:00",
+    "total_checks": 6,
+    "total_successes": 1
+  },
+  "proxy_03458": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:54:38.765400+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T02:13:47.515085+00:00",
+    "total_checks": 8,
+    "total_successes": 2
+  },
+  "proxy_03031": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:54:38.765400+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_00068": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 594.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 85,
+    "total_successes": 84
+  },
+  "proxy_00482": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:54:38.765400+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-16T19:05:02.783472+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_04973": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:54:38.765400+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_03825": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:53:54.789869+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:42:46.789066+00:00",
+    "total_checks": 12,
+    "total_successes": 4
+  },
+  "proxy_06213": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:55:56.784459+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_06698": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:55:56.784459+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_00620": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:55:56.784459+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T02:30:28.768256+00:00",
+    "total_checks": 13,
+    "total_successes": 5
+  },
+  "proxy_07894": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:55:56.784459+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_06947": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:55:56.784459+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_04414": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T06:01:33.775140+00:00",
+    "total_checks": 25,
+    "total_successes": 20
+  },
+  "proxy_07931": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:55:56.784459+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_00045": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 3938.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 64,
+    "total_successes": 56
+  },
+  "proxy_02384": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:55:56.784459+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-16T19:05:02.783472+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_08189": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:57:14.767270+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_01443": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:57:14.767270+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_03137": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:57:14.767270+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T02:29:19.766196+00:00",
+    "total_checks": 14,
+    "total_successes": 5
+  },
+  "proxy_08553": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:57:14.767270+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_07970": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 1359.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 89,
+    "total_successes": 89
+  },
+  "proxy_00554": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:57:14.767270+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_01153": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:57:14.767270+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T02:22:55.783341+00:00",
+    "total_checks": 9,
+    "total_successes": 2
+  },
+  "proxy_01047": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:57:14.767270+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_08420": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:57:14.767270+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_07250": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:57:14.767270+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_06891": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:58:31.788698+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_00122": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:58:31.788698+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-16T19:05:02.783472+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_00919": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:58:31.788698+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T01:35:45.776835+00:00",
+    "total_checks": 6,
+    "total_successes": 2
+  },
+  "proxy_03013": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:58:31.788698+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_07969": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 1531.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 89,
+    "total_successes": 89
+  },
+  "proxy_00163": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:58:31.788698+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_05414": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:58:31.788698+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T02:17:49.777336+00:00",
+    "total_checks": 14,
+    "total_successes": 6
+  },
+  "proxy_07791": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:59:49.778908+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_04295": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:59:49.778908+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_02225": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:59:49.778908+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_00273": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:41:37.766116+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:03:34.784720+00:00",
+    "total_checks": 9,
+    "total_successes": 4
+  },
+  "proxy_07259": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:59:49.778908+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_05846": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:59:49.778908+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_00775": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:59:49.778908+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-16T19:05:02.783472+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_04408": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:59:49.778908+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_02837": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:59:49.778908+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-16T19:05:02.783472+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_06646": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:59:49.778908+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_03735": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:01:07.780440+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_04291": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:01:07.780440+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_01620": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:01:07.780440+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_06421": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:01:07.780440+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_00280": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:01:07.780440+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_00560": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:01:07.780440+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T02:21:28.769389+00:00",
+    "total_checks": 8,
+    "total_successes": 2
+  },
+  "proxy_04372": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:53:54.789869+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:42:46.789066+00:00",
+    "total_checks": 14,
+    "total_successes": 5
+  },
+  "proxy_04346": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:01:07.780440+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T02:26:46.770217+00:00",
+    "total_checks": 9,
+    "total_successes": 2
+  },
+  "proxy_05162": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:01:07.780440+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_08764": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:02:25.785547+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_04211": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:02:25.785547+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T01:37:03.773713+00:00",
+    "total_checks": 7,
+    "total_successes": 3
+  },
+  "proxy_02522": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:02:25.785547+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_06932": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:02:25.785547+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_08467": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:02:25.785547+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_06686": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:02:25.785547+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_06085": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:02:25.785547+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T01:37:03.773713+00:00",
+    "total_checks": 7,
+    "total_successes": 3
+  },
+  "proxy_04410": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:48:50.779904+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:04:52.769246+00:00",
+    "total_checks": 19,
+    "total_successes": 9
+  },
+  "proxy_05571": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:03:43.771119+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_08728": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:41:37.766116+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:03:43.771119+00:00",
+    "total_checks": 6,
+    "total_successes": 1
+  },
+  "proxy_00624": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:03:43.771119+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-16T19:06:02.776072+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_06559": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:03:43.771119+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_03449": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:15.771224+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:58:57.771309+00:00",
+    "total_checks": 17,
+    "total_successes": 13
+  },
+  "proxy_05750": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:03:43.771119+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-16T19:06:02.776072+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_08086": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:03:43.771119+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_07914": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:05:01.782090+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_08897": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:05:01.782090+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_04327": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:05:01.782090+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_00600": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:05:01.782090+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-16T19:06:02.776072+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_08397": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:05:01.782090+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_01318": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:05:01.782090+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_08066": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:05:01.782090+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_06082": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 953.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 89,
+    "total_successes": 89
+  },
+  "proxy_03165": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:42:55.777236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T02:25:19.942798+00:00",
+    "total_checks": 8,
+    "total_successes": 2
+  },
+  "proxy_01968": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:42:55.777236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_04678": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:01:33.775140+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T06:00:15.771224+00:00",
+    "total_checks": 13,
+    "total_successes": 8
+  },
+  "proxy_07680": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:42:55.777236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_04424": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:42:55.777236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T01:49:52.774702+00:00",
+    "total_checks": 6,
+    "total_successes": 1
+  },
+  "proxy_08344": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:42:55.777236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_06196": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:42:55.777236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_01330": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:55:12.776112+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:48:41.775069+00:00",
+    "total_checks": 7,
+    "total_successes": 2
+  },
+  "proxy_02899": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:42:55.777236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_03345": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:42:55.777236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": "2026-04-17T01:49:52.774702+00:00",
+    "total_checks": 6,
+    "total_successes": 1
+  },
+  "proxy_05609": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:25:28.776664+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02484": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:26:46.770217+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:49:52.774702+00:00",
+    "total_checks": 6,
+    "total_successes": 2
+  },
+  "proxy_07326": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:26:46.770217+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03283": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:26:46.770217+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-16T19:06:02.776072+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_06632": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:26:46.770217+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04397": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:26:46.770217+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08223": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:26:46.770217+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04056": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:26:46.770217+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-16T19:06:02.776072+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_02382": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:26:46.770217+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01071": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:28:04.786476+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-16T19:06:02.776072+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_06828": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:28:04.786476+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07963": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:28:04.786476+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05631": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:28:04.786476+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08910": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:28:04.786476+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04599": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:28:04.786476+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01397": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:28:04.786476+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:32:37.786649+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_08817": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:28:04.786476+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03294": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:29:19.766196+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08228": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:29:19.766196+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04938": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:29:19.766196+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04042": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:29:19.766196+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05485": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:29:19.766196+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00750": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:29:19.766196+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06367": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:29:19.766196+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08996": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:29:19.766196+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:32:37.786649+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_04105": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:30:37.770059+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04948": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:30:37.770059+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:53:37.772301+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_02502": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:30:37.770059+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05604": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:30:37.770059+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:32:37.786649+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_03009": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:30:37.770059+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00691": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:35:16.791013+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:31:46.779991+00:00",
+    "total_checks": 7,
+    "total_successes": 2
+  },
+  "proxy_01720": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:30:37.770059+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08858": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:30:37.770059+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01854": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:31:55.764846+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06319": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:31:55.764846+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04189": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:31:55.764846+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00442": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:31:55.764846+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05563": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:31:55.764846+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01181": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:31:55.764846+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04687": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:31:55.764846+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07044": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:33:13.786684+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00987": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:33:13.786684+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:32:37.786649+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_07448": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:33:13.786684+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03020": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:33:13.786684+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08614": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:33:13.786684+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06344": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:33:13.786684+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05654": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:33:13.786684+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08386": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:34:23.769232+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:38:21.779901+00:00",
+    "total_checks": 7,
+    "total_successes": 4
+  },
+  "proxy_07502": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:34:23.769232+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07020": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:34:23.769232+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01384": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:34:23.769232+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:57:24.768165+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_03289": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:34:23.769232+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06896": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:34:23.769232+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06067": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:34:23.769232+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:35:45.776835+00:00",
+    "total_checks": 5,
+    "total_successes": 2
+  },
+  "proxy_05179": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:34:23.769232+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07806": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 1359.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 89,
+    "total_successes": 89
+  },
+  "proxy_05052": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:34:23.769232+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07166": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:34:23.769232+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06048": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 937.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 89,
+    "total_successes": 89
+  },
+  "proxy_08526": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:35:36.774247+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:35:45.776835+00:00",
+    "total_checks": 5,
+    "total_successes": 2
+  },
+  "proxy_04867": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:35:36.774247+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:32:37.786649+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_07625": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:35:36.774247+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06227": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:35:36.774247+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03702": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:35:36.774247+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00610": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:35:36.774247+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00374": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:35:36.774247+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04075": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:35:36.774247+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:37:03.773713+00:00",
+    "total_checks": 6,
+    "total_successes": 3
+  },
+  "proxy_01668": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:35:36.774247+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08292": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:40:19.796533+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_03118": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:36:48.775306+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02190": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:36:48.775306+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02601": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:36:48.775306+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01142": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:36:48.775306+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05870": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:36:48.775306+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02557": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:36:48.775306+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07988": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:36:48.775306+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06492": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:36:48.775306+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02621": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:37:59.781947+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:34:36.775912+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_03198": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:37:59.781947+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00064": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 1640.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 84,
+    "total_successes": 82
+  },
+  "proxy_08126": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:37:59.781947+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07217": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:37:59.781947+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08925": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:40:19.796533+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_08972": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:37:59.781947+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01750": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:37:59.781947+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:08:46.768505+00:00",
+    "total_checks": 9,
+    "total_successes": 4
+  },
+  "proxy_07856": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 1219.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 75,
+    "total_successes": 74
+  },
+  "proxy_04618": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:37:59.781947+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04055": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:41:37.766116+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T04:59:40.777448+00:00",
+    "total_checks": 26,
+    "total_successes": 18
+  },
+  "proxy_07365": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:39:11.773348+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04569": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:44:19.780632+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:39:11.773348+00:00",
+    "total_checks": 6,
+    "total_successes": 1
+  },
+  "proxy_02636": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:39:11.773348+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03701": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:39:11.773348+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00528": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:39:11.773348+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04682": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:39:11.773348+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04603": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:39:11.773348+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00950": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:40:29.778430+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03423": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:40:29.778430+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08309": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:40:29.778430+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04149": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:40:29.778430+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02057": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:40:29.778430+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06131": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:40:29.778430+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00141": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:40:29.778430+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01151": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:40:29.778430+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01903": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:40:29.778430+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:35:45.776835+00:00",
+    "total_checks": 5,
+    "total_successes": 2
+  },
+  "proxy_01436": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:40:29.778430+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:03:34.777550+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_03263": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:41:39.771873+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:10:04.768472+00:00",
+    "total_checks": 7,
+    "total_successes": 2
+  },
+  "proxy_03926": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:40:19.796533+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_00039": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:44:19.780632+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:41:39.771873+00:00",
+    "total_checks": 6,
+    "total_successes": 1
+  },
+  "proxy_06351": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:41:39.771873+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08289": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:41:39.771873+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05007": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:41:39.771873+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:06:01.785114+00:00",
+    "total_checks": 6,
+    "total_successes": 2
+  },
+  "proxy_04821": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:41:39.771873+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07633": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:47:32.780302+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 4,
+    "last_success": null,
+    "total_checks": 4,
+    "total_successes": 0
+  },
+  "proxy_08379": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:41:39.771873+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01966": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:42:57.787849+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:04:52.773492+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_09011": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:42:57.787849+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04501": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:42:57.787849+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03100": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:42:57.787849+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07295": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:42:57.787849+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08938": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:42:57.787849+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00962": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:42:57.787849+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:06:10.785421+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_06662": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:42:57.787849+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01245": {
+    "alive": false,
+    "last_checked": "2026-04-17T02:42:57.787849+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06044": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 969.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 85,
+    "total_successes": 85
+  },
+  "proxy_06820": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:35:16.791013+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07431": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:35:16.791013+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05272": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:35:16.791013+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07034": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:36:33.781255+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04300": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:41:37.766116+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:02:16.781007+00:00",
+    "total_checks": 24,
+    "total_successes": 16
+  },
+  "proxy_04124": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:36:33.781255+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:44:39.776527+00:00",
+    "total_checks": 5,
+    "total_successes": 2
+  },
+  "proxy_00062": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:50:46.776016+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-18T04:37:42.773457+00:00",
+    "total_checks": 11,
+    "total_successes": 4
+  },
+  "proxy_05169": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:36:33.781255+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:07:28.770080+00:00",
+    "total_checks": 5,
+    "total_successes": 1
+  },
+  "proxy_08515": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:36:33.781255+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04856": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:36:33.781255+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05182": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:36:33.781255+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00562": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:36:33.781255+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:08:37.793780+00:00",
+    "total_checks": 7,
+    "total_successes": 3
+  },
+  "proxy_07004": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:36:33.781255+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07731": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:37:51.719442+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06654": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:37:51.719442+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03915": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:41:37.766116+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-18T04:58:31.788698+00:00",
+    "total_checks": 13,
+    "total_successes": 5
+  },
+  "proxy_01727": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T06:01:33.775140+00:00",
+    "total_checks": 45,
+    "total_successes": 40
+  },
+  "proxy_04423": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:37:51.719442+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05224": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:37:51.719442+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04943": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:58:57.771309+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:57:39.784304+00:00",
+    "total_checks": 20,
+    "total_successes": 11
+  },
+  "proxy_04257": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:56:30.777443+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:49:59.768880+00:00",
+    "total_checks": 22,
+    "total_successes": 14
+  },
+  "proxy_02061": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:37:51.719442+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00294": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:37:51.719442+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07727": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:44:19.780632+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00495": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:45:37.784484+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:26:37.773605+00:00",
+    "total_checks": 17,
+    "total_successes": 12
+  },
+  "proxy_08506": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:45:37.784484+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05967": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 1000.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 85,
+    "total_successes": 85
+  },
+  "proxy_01204": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:45:37.784484+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08238": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:45:37.784484+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01722": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:45:37.784484+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:17:49.777336+00:00",
+    "total_checks": 7,
+    "total_successes": 2
+  },
+  "proxy_04826": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:45:37.784484+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T02:11:22.785417+00:00",
+    "total_checks": 6,
+    "total_successes": 2
+  },
+  "proxy_02201": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:45:37.784484+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-17T01:43:30.770372+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_09019": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:46:55.779198+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05639": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:46:55.779198+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04438": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:46:55.779198+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04467": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:46:55.779198+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01735": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:46:55.779198+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08612": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:46:55.779198+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03146": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:46:55.779198+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00166": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:59:06.772225+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:51:17.771113+00:00",
+    "total_checks": 25,
+    "total_successes": 20
+  },
+  "proxy_02078": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:46:55.779198+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05252": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:46:55.779198+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03337": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:46:55.779198+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02063": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:48:10.774386+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02396": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:48:10.774386+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06384": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:48:10.774386+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07412": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:48:10.774386+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06385": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:48:10.774386+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03887": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:48:10.774386+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05743": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:48:10.774386+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06909": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:48:10.774386+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03736": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:48:10.774386+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05872": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:49:28.776236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03657": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 3329.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 32,
+    "total_successes": 28
+  },
+  "proxy_08686": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:49:28.776236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07180": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 906.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 38,
+    "total_successes": 38
+  },
+  "proxy_02989": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:49:28.776236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05861": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:48:50.779904+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:04:52.769246+00:00",
+    "total_checks": 18,
+    "total_successes": 13
+  },
+  "proxy_08824": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:49:28.776236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03740": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:49:28.776236+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07854": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 1187.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 36,
+    "total_successes": 35
+  },
+  "proxy_00671": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:50:46.776016+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01559": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:41:37.766116+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:02:25.785547+00:00",
+    "total_checks": 13,
+    "total_successes": 7
+  },
+  "proxy_02659": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:50:46.776016+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08257": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:50:46.776016+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02052": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:50:46.776016+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02915": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:50:46.776016+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02451": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:50:46.776016+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05335": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:50:46.776016+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02170": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:50:46.776016+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01302": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:52:04.779801+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-18T04:38:59.775183+00:00",
+    "total_checks": 8,
+    "total_successes": 5
+  },
+  "proxy_01011": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:52:04.779801+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01549": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:52:04.779801+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06577": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:52:04.779801+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_00049": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:53:54.789869+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:42:46.789066+00:00",
+    "total_checks": 14,
+    "total_successes": 9
+  },
+  "proxy_01579": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:48:50.779904+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:04:52.769246+00:00",
+    "total_checks": 15,
+    "total_successes": 9
+  },
+  "proxy_03179": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:52:04.779801+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": "2026-04-18T04:33:58.774782+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_00338": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:52:04.779801+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_06115": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:52:04.779801+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_07828": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:53:22.777836+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_09036": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:53:22.777836+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02164": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:53:22.777836+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08081": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:53:22.777836+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_01784": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:53:22.777836+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_05142": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:53:22.777836+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_08528": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:53:22.777836+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04063": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:53:22.777836+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_04282": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:53:22.777836+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_02852": {
+    "alive": false,
+    "last_checked": "2026-04-18T04:53:22.777836+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 3,
+    "last_success": null,
+    "total_checks": 3,
+    "total_successes": 0
+  },
+  "proxy_03318": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:48:50.779904+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03698": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:48:50.779904+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:40:19.796533+00:00",
+    "total_checks": 3,
+    "total_successes": 1
+  },
+  "proxy_07537": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:50:08.793488+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_08902": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:50:08.793488+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02390": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:50:08.793488+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03350": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:50:08.793488+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02218": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:50:08.793488+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_00636": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:50:08.793488+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_00790": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:50:08.793488+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_04759": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:50:08.793488+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_08313": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:50:08.793488+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03614": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:50:08.793488+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03987": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:51:26.790827+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_08821": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:51:26.790827+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_07564": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:51:26.790827+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_05594": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:51:26.790827+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_04359": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:51:26.790827+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:41:28.786070+00:00",
+    "total_checks": 4,
+    "total_successes": 2
+  },
+  "proxy_07635": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:51:26.790827+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02283": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:51:26.790827+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_01062": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:51:26.790827+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_01046": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:51:26.790827+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_04842": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:51:26.790827+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_05428": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:53:54.789869+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03908": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:24.773343+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:53:54.789869+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_01109": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:53:54.789869+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_00768": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:53:54.789869+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_00542": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:53:54.789869+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_06075": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 1031.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 12,
+    "total_successes": 11
+  },
+  "proxy_06337": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:55:12.776112+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02009": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:55:12.776112+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_01386": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:55:12.776112+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_00018": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 1219.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 11,
+    "total_successes": 10
+  },
+  "proxy_00908": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:01:42.773171+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:55:12.776112+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_08160": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:55:12.776112+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_00329": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:55:12.776112+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03560": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:56:30.777443+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_04659": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:56:30.777443+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_04095": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:56:30.777443+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_08616": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:56:30.777443+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02664": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:03:00.781691+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": "2026-04-18T05:56:30.777443+00:00",
+    "total_checks": 4,
+    "total_successes": 1
+  },
+  "proxy_05026": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:15.771224+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:58:57.771309+00:00",
+    "total_checks": 6,
+    "total_successes": 4
+  },
+  "proxy_08965": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:56:30.777443+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02616": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:15.771224+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:58:57.771309+00:00",
+    "total_checks": 8,
+    "total_successes": 6
+  },
+  "proxy_02189": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:56:30.777443+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_06862": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:57:48.784172+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_04716": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:57:48.784172+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_00370": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:57:48.784172+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_04703": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:57:48.784172+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03043": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:57:48.784172+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_01128": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:57:48.784172+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_00586": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:57:48.784172+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_06419": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:57:48.784172+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_06777": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:57:48.784172+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_01817": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:57:48.784172+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_04713": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:15.771224+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:59:06.772225+00:00",
+    "total_checks": 3,
+    "total_successes": 1
+  },
+  "proxy_03181": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:59:06.772225+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03659": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:59:06.772225+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_07216": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:59:06.772225+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_07226": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:59:06.772225+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_04368": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:59:06.772225+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03943": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:59:06.772225+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03010": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:59:06.772225+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_06522": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:59:06.772225+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_01138": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:24.773343+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03218": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T06:01:33.775140+00:00",
+    "total_checks": 8,
+    "total_successes": 6
+  },
+  "proxy_06269": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:24.773343+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02016": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:24.773343+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02281": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:01:33.775140+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T06:00:24.773343+00:00",
+    "total_checks": 4,
+    "total_successes": 2
+  },
+  "proxy_01223": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:24.773343+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02516": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:24.773343+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_07064": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:24.773343+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_06565": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:24.773343+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_04545": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:01:42.773171+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_08884": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:01:42.773171+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02249": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:01:42.773171+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_05583": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:01:42.773171+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_05704": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 2375.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 3,
+    "total_successes": 2
+  },
+  "proxy_01918": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:01:42.773171+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_01767": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:01:42.773171+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_08830": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:01:42.773171+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_07258": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:03:00.781691+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_01824": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:03:00.781691+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_06219": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:03:00.781691+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02315": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:03:00.781691+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_08402": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:03:00.781691+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02463": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:03:00.781691+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_03568": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:03:00.781691+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_04332": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:03:00.781691+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_01700": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:03:00.781691+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 2,
+    "last_success": null,
+    "total_checks": 2,
+    "total_successes": 0
+  },
+  "proxy_02326": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:47:32.780302+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_07393": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 1125.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 12,
+    "total_successes": 12
+  },
+  "proxy_02538": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:47:32.780302+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_05787": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:47:32.780302+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_06211": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:47:32.780302+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_08833": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:47:32.780302+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_08113": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 969.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 12,
+    "total_successes": 12
+  },
+  "proxy_01276": {
+    "alive": true,
+    "last_checked": "2026-04-18T06:02:51.765915+00:00",
+    "response_time_ms": 1609.0,
+    "consecutive_failures": 0,
+    "last_success": "2026-04-18T06:02:51.765915+00:00",
+    "total_checks": 9,
+    "total_successes": 9
+  },
+  "proxy_02971": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_08279": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_04434": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:58:57.771309+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:57:39.784304+00:00",
+    "total_checks": 6,
+    "total_successes": 5
+  },
+  "proxy_00556": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_05740": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_05141": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:53:45.777442+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:52:36.777688+00:00",
+    "total_checks": 2,
+    "total_successes": 1
+  },
+  "proxy_00426": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_08336": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_03385": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_02553": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_01980": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_04447": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_00813": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_06261": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_08562": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_05890": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_03734": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_08316": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_02076": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_04361": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_08639": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_00340": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_02867": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_01814": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_00514": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_00746": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_02167": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_04090": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:58:57.771309+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:57:39.784304+00:00",
+    "total_checks": 6,
+    "total_successes": 5
+  },
+  "proxy_03220": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_07606": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_01061": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:53:45.777442+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:52:36.777688+00:00",
+    "total_checks": 2,
+    "total_successes": 1
+  },
+  "proxy_01179": {
+    "alive": false,
+    "last_checked": "2026-04-18T06:00:15.771224+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:58:57.771309+00:00",
+    "total_checks": 7,
+    "total_successes": 6
+  },
+  "proxy_01741": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:53:45.777442+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:52:36.777688+00:00",
+    "total_checks": 2,
+    "total_successes": 1
+  },
+  "proxy_06191": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_01037": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_08474": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_03559": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_08782": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_06659": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_05047": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_07534": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_03070": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_04480": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:57:39.784304+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": "2026-04-18T05:56:21.766356+00:00",
+    "total_checks": 5,
+    "total_successes": 4
+  },
+  "proxy_02289": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_06846": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_00689": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_04269": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_06948": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  },
+  "proxy_02893": {
+    "alive": false,
+    "last_checked": "2026-04-18T05:52:36.777688+00:00",
+    "response_time_ms": null,
+    "consecutive_failures": 1,
+    "last_success": null,
+    "total_checks": 1,
+    "total_successes": 0
+  }
+}
