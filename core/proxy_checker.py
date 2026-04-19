@@ -135,6 +135,14 @@ async def check_single_proxy(proxy: dict) -> dict:
 
                     result["alive"] = True
                     result["response_time_ms"] = round(elapsed, 1)
+
+                    # ═══ Speed threshold check ═══
+                    max_speed = getattr(config, "MAX_SPEED_MS", 0)
+                    if max_speed > 0 and elapsed > max_speed:
+                        result["alive"] = False
+                        result["error"] = f"Too slow ({elapsed:.0f}ms > {max_speed}ms)"
+                        return result
+
                     logger.info(
                         f"[OK] {proxy_id} ({proxy['ip']}:{proxy['port']}) "
                         f"-- {elapsed:.0f}ms"
@@ -158,7 +166,21 @@ async def check_batch(proxies: list[dict]) -> list[dict]:
             return await check_single_proxy(proxy)
 
     tasks = [_limited(p) for p in proxies]
-    return await asyncio.gather(*tasks)
+    results = await asyncio.gather(*tasks)
+
+    # ═══ تسجيل النتائج في التحليلات ═══
+    try:
+        from core.proxy_analytics import ProxyAnalytics
+        analytics = ProxyAnalytics.get_instance()
+        proxy_map = {p["id"]: p for p in proxies}
+        for r in results:
+            proxy = proxy_map.get(r["id"])
+            country = proxy.get("country", "??") if proxy else "??"
+            analytics.record_check(r["id"], r["alive"], r.get("response_time_ms"), country)
+    except Exception:
+        pass  # لا نوقف الفحص بسبب خطأ في التحليلات
+
+    return results
 
 
 async def find_alive_proxies(

@@ -12,8 +12,9 @@ from typing import Optional
 from python_socks.async_.asyncio import Proxy
 from python_socks import ProxyType
 
-from failover_handler import FailoverHandler
-from traffic_logger import TrafficLogger
+from core.failover_handler import FailoverHandler
+from utils.traffic_logger import TrafficLogger
+from core.adblock_manager import AdBlockManager
 import config
 
 logger = logging.getLogger("socks5_server")
@@ -106,8 +107,15 @@ class Socks5Server:
                 "protocol": "SOCKS5",
             }
 
-            # الاتصال عبر البروكسي — بدون قتل أي بروكسي
+            # ── فحص حظر الإعلانات ──
             tlog = TrafficLogger.get_instance()
+            adblocker = AdBlockManager.get_instance()
+            if adblocker.is_blocked(target_host):
+                tlog.log_request(client_ip, "SOCKS5", f"{target_host}:{target_port}", "CONNECT", "blocked")
+                await self._send_error_reply(writer, REP_GENERAL_FAILURE)
+                return
+
+            # الاتصال عبر البروكسي — بدون قتل أي بروكسي
             up_reader, up_writer = await self._connect_via_proxy(
                 target_host, target_port, writer
             )

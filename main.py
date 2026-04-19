@@ -24,12 +24,12 @@ if os.name == "nt":
     )
 
 import config
-from proxy_manager import ProxyManager
-from proxy_checker import find_alive_proxies, recheck_alive_proxies, check_batch, detect_real_ip
-from failover_handler import FailoverHandler
-from socks5_server import Socks5Server
-from http_proxy_server import HttpProxyServer
-from traffic_logger import TrafficLogger
+from core.proxy_manager import ProxyManager
+from core.proxy_checker import find_alive_proxies, recheck_alive_proxies, check_batch, detect_real_ip
+from core.failover_handler import FailoverHandler
+from servers.socks5_server import Socks5Server
+from servers.http_proxy_server import HttpProxyServer
+from utils.traffic_logger import TrafficLogger
 
 # ── Logging ──
 LOG_FORMAT = "%(asctime)s | %(name)-16s | %(levelname)-7s | %(message)s"
@@ -424,8 +424,26 @@ async def main():
 
 if __name__ == "__main__":
     import sys
+    import os
+    
+    # ── إخفاء سطر الأوامر (Console) على ويندوز ──
+    if os.name == 'nt' and getattr(config, 'HIDE_CONSOLE', False):
+        try:
+            import ctypes
+            # إخفاء نافذة الكونسل (0 = SW_HIDE)
+            ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(), 0)
+        except Exception:
+            pass
+
+    # ── منطق التشغيل (GUI أو Console) ──
+    use_gui = getattr(config, 'START_WITH_GUI', False)
     if "--gui" in sys.argv or getattr(sys, 'frozen', False):
-        from gui import launch
+        use_gui = True
+    if "--no-gui" in sys.argv:
+        use_gui = False
+
+    if use_gui:
+        from gui.launcher import launch
         launch()
     else:
         try:

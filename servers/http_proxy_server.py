@@ -19,8 +19,9 @@ from urllib.parse import urlparse
 from python_socks.async_.asyncio import Proxy
 from python_socks import ProxyType
 
-from failover_handler import FailoverHandler
-from traffic_logger import TrafficLogger
+from core.failover_handler import FailoverHandler
+from utils.traffic_logger import TrafficLogger
+from core.adblock_manager import AdBlockManager
 import config
 
 logger = logging.getLogger("http_proxy")
@@ -212,6 +213,13 @@ class HttpProxyServer:
 
         tlog = TrafficLogger.get_instance()
 
+        # ── فحص حظر الإعلانات ──
+        adblocker = AdBlockManager.get_instance()
+        if adblocker.is_blocked(host):
+            tlog.log_request(client_ip, "HTTP", f"{host}:{port}", "CONNECT", "blocked")
+            await self._send_error(writer, 403, "Blocked by Ad Filter")
+            return
+
         # الاتصال عبر البروكسي
         up_reader, up_writer = await self._connect_via_proxy(host, port)
         if up_reader is None:
@@ -252,6 +260,14 @@ class HttpProxyServer:
         )
 
         tlog = TrafficLogger.get_instance()
+
+        # ── فحص حظر الإعلانات ──
+        path_to_check = parsed.path or "/"
+        adblocker = AdBlockManager.get_instance()
+        if adblocker.is_blocked(host, path_to_check):
+            tlog.log_request(client_ip, "HTTP", f"{host}:{port}", method, "blocked")
+            await self._send_error(writer, 403, "Blocked by Ad Filter")
+            return
 
         # الاتصال عبر البروكسي
         up_reader, up_writer = await self._connect_via_proxy(host, port)

@@ -3,3 +3,4 @@ python main.pyRemove-Item -Path "proxies_status.json" -ErrorAction SilentlyConti
 Remove-Item -Path "proxies_status.json" -ErrorAction SilentlyContinue; python main.py
 python main.py
 python main.py --gui
+python main.py

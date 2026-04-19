@@ -9,7 +9,7 @@ import logging
 import time
 from typing import Optional
 
-from proxy_manager import ProxyManager
+from core.proxy_manager import ProxyManager
 import config
 
 logger = logging.getLogger("failover")

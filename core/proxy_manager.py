@@ -24,6 +24,7 @@ def _normalize_proxy(raw: dict, index: int) -> dict:
     if ptype == "http":
         ptype = "https"
 
+    geo = raw.get("geolocation", {})
     return {
         "id": raw.get("id", f"proxy_{index:05d}"),
         "ip": raw["ip"],
@@ -31,6 +32,8 @@ def _normalize_proxy(raw: dict, index: int) -> dict:
         "type": ptype,
         "username": raw.get("username"),
         "password": raw.get("password"),
+        "country": geo.get("country", "??"),
+        "city": geo.get("city", "Unknown"),
     }
 
 
@@ -39,6 +42,7 @@ class ProxyManager:
 
     def __init__(self):
         self.proxies: list[dict] = []
+        self._all_proxies: list[dict] = []  # unfiltered
         self._proxies_by_id: dict[str, dict] = {}
         self.status: dict[str, dict] = {}
         self._sorted_proxies: list[dict] = []
@@ -46,7 +50,7 @@ class ProxyManager:
     def load_proxies(self) -> list[dict]:
         """تحميل البروكسيات من ملف JSON."""
         filepath = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             config.PROXIES_FILE,
         )
         try:
@@ -62,13 +66,27 @@ class ProxyManager:
                 self.proxies = []
                 return self.proxies
 
-            self.proxies = []
+            self._all_proxies = []
             for i, raw in enumerate(raw_list):
                 try:
                     normalized = _normalize_proxy(raw, i)
-                    self.proxies.append(normalized)
+                    self._all_proxies.append(normalized)
                 except (KeyError, ValueError) as e:
                     pass  # تخطي البروكسيات غير الصالحة بصمت
+
+            # فلترة حسب البلد
+            country_filter = getattr(config, "COUNTRY_FILTER", "GLOBAL").upper()
+            if country_filter and country_filter != "GLOBAL":
+                self.proxies = [
+                    p for p in self._all_proxies
+                    if p["country"].upper() == country_filter
+                ]
+                logger.info(
+                    f"[FILTER] Country={country_filter}: "
+                    f"{len(self.proxies)}/{len(self._all_proxies)} proxies"
+                )
+            else:
+                self.proxies = list(self._all_proxies)
 
             # بناء فهرس سريع
             self._proxies_by_id = {p["id"]: p for p in self.proxies}
@@ -90,7 +108,7 @@ class ProxyManager:
     def _load_status(self):
         """تحميل حالة البروكسيات المحفوظة."""
         filepath = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             config.STATUS_FILE,
         )
         if os.path.exists(filepath):
@@ -105,7 +123,7 @@ class ProxyManager:
     def _save_status(self):
         """حفظ حالة البروكسيات."""
         filepath = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             config.STATUS_FILE,
         )
         try:
@@ -365,3 +383,12 @@ class ProxyManager:
             "unchecked": unchecked,
             "total": len(self.proxies),
         }
+
+    def get_available_countries(self) -> list[dict]:
+        """إرجاع قائمة البلدان المتاحة مع عدد البروكسيات."""
+        from collections import Counter
+        source = self._all_proxies if self._all_proxies else self.proxies
+        counts = Counter(p["country"] for p in source)
+        result = [{"code": code, "count": count} for code, count in counts.items()]
+        result.sort(key=lambda x: x["count"], reverse=True)
+        return result

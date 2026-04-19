@@ -29,7 +29,8 @@ MAX_MEMORY_ENTRIES = 500
 
 # ملف اللوج
 TRAFFIC_LOG_FILE = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)),
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "data",
     "traffic_log.json",
 )
 

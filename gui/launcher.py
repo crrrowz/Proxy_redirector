@@ -11,7 +11,7 @@ import threading
 import traceback
 import urllib.request
 
-_URL = "http://127.0.0.1:9090"
+_URL = f"http://127.0.0.1:9090/?_ts={int(time.time())}"
 _MUTEX_NAME = "Global\\ProxyRedirector_SingleInstance"
 _mutex_handle = None
 
@@ -61,7 +61,7 @@ def _wait_for_server(url: str, timeout: float = 15.0) -> bool:
 def _run_server():
     """تشغيل API server في خلفية."""
     try:
-        from api_server import start_api_server
+        from servers.api_server import start_api_server
         start_api_server()
     except Exception:
         print(f"[SERVER CRASH] {traceback.format_exc()}")
@@ -82,7 +82,7 @@ def launch():
         if getattr(sys, 'frozen', False):
             _base = Path(sys._MEIPASS) / 'static'
         else:
-            _base = Path(__file__).parent / 'static'
+            _base = Path(__file__).parent.parent / 'static'
 
         loading_url = (_base / 'loading.html').as_uri()
 
@@ -110,7 +110,7 @@ def launch():
                 self._win.toggle_fullscreen()
 
             def close(self):
-                from api_server import stop_api_server
+                from servers.api_server import stop_api_server
                 stop_api_server()
                 self._win.destroy()
 
