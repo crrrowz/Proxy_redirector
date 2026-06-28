@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proxy Redirector Dashboard</title>
+    <meta name="description" content="Manage your high-performance SOCKS5 and HTTP proxies, real-time analytics, and DNS AdBlocker easily.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Title Bar -->
-    <div class="titlebar">
+    <header class="titlebar">
         <div class="titlebar-logo">
             <div class="dot" id="status-dot"></div>
             <span>Proxy Redirector v2.1</span>
@@ -18,12 +19,12 @@
             <div class="btn-win" onclick="toggle_maximize()">☐</div>
             <div class="btn-win btn-close" onclick="close_app()">✕</div>
         </div>
-    </div>
+    </header>
 
     <div class="app-layout">
         <!-- Sidebar Navigation -->
-        <div class="sidebar">
-            <div class="sidebar-section">
+        <aside class="sidebar">
+            <nav class="sidebar-section">
                 <div class="sidebar-label">Navigation</div>
                 <div class="nav-item active" onclick="switchTab('dashboard', this)">
                     <span class="nav-icon">📊</span>
@@ -50,7 +51,7 @@
                     <span class="nav-icon">⚙️</span>
                     <span>Settings</span>
                 </div>
-            </div>
+            </nav>
 
             <!-- Sidebar Footer: Engine Controls -->
             <div class="sidebar-footer">
@@ -60,13 +61,13 @@
                 <button id="btn-stop" class="btn danger" onclick="stopEngine()" style="width:100%; display:none; justify-content:center;">■ Stop</button>
                 <div id="engine-status-label" style="font-size:11px; color:var(--text-muted); margin-top:6px; text-align:center;">Loading...</div>
             </div>
-        </div>
+        </aside>
 
         <!-- Main Content Area -->
-        <div class="main-content">
+        <main class="main-content">
 
             <!-- ═══ TAB 1: Dashboard ═══ -->
-            <div id="tab-dashboard" class="tab-page active">
+            <section id="tab-dashboard" class="tab-page active">
                 <!-- Stat Cards -->
                 <div class="stats-grid">
                     <div class="stat-card green">
@@ -127,10 +128,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- ═══ TAB 2: Proxy Pool ═══ -->
-            <div id="tab-proxies" class="tab-page">
+            <section id="tab-proxies" class="tab-page">
                 <div class="toolbar">
                     <div>
                         <h2 style="font-size:18px;">Proxy Pool</h2>
@@ -161,10 +162,10 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- ═══ TAB 3: Ad Blocker ═══ -->
-            <div id="tab-adblock" class="tab-page">
+            <section id="tab-adblock" class="tab-page">
                 <div class="toolbar">
                     <div>
                         <h2 style="font-size:18px;">🛡️ Ad Blocker</h2>
@@ -260,10 +261,10 @@
                         <div id="whitelist-list" style="max-height:150px; overflow-y:auto; margin-top:10px;"></div>
                     </details>
                 </div>
-            </div>
+            </section>
 
             <!-- ═══ TAB 4: Traffic Log ═══ -->
-            <div id="tab-traffic" class="tab-page">
+            <section id="tab-traffic" class="tab-page">
                 <div class="toolbar">
                     <div>
                         <h2 style="font-size:18px;">📝 Traffic Log</h2>
@@ -299,10 +300,10 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- ═══ TAB 5: Analytics ═══ -->
-            <div id="tab-analytics" class="tab-page">
+            <section id="tab-analytics" class="tab-page">
                 <div class="toolbar">
                     <div>
                         <h2 style="font-size:18px;">📈 Analytics</h2>
@@ -382,10 +383,10 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- ═══ TAB 6: Settings ═══ -->
-            <div id="tab-settings" class="tab-page">
+            <section id="tab-settings" class="tab-page">
                 <div class="toolbar">
                     <div>
                         <h2 style="font-size:18px;">⚙️ Settings</h2>
@@ -551,9 +552,9 @@
                 <div id="settings-saved-msg" style="display:none; color:var(--success); font-size:13px; text-align:center; padding:12px;">
                     ✅ Settings saved successfully! Some changes require a restart to take effect.
                 </div>
-            </div>
+            </section>
 
-        </div><!-- /main-content -->
+        </main><!-- /main-content -->
     </div><!-- /app-layout -->
 
     <!-- Start Engine Modal -->

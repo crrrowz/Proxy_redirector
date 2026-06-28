@@ -4,3 +4,7 @@ Remove-Item -Path "proxies_status.json" -ErrorAction SilentlyContinue; python ma
 python main.py
 python main.py --gui
 python main.py
+antigravity --install-extension better-antigravity-0.8.0.vsix --force
+cd D:\files\Contracted projects\IdeaProjects\Proxy_redirector\saas
+cd saas
+py merge.py
