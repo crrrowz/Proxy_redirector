@@ -8,3 +8,34 @@ antigravity --install-extension better-antigravity-0.8.0.vsix --force
 cd D:\files\Contracted projects\IdeaProjects\Proxy_redirector\saas
 cd saas
 py merge.py
+pyreqscan
+.\.venv\Scripts\Activate.ps1
+.\.venv\Scripts\activate.bat
+pyreqscan .
+.\.venv\Scripts\activate.bat
+pyreqscan . --init-env --install
+.\.venv\Scripts\activate.bat
+.\.venv\Scripts\Activate.ps1
+python main.py
+pyreqscan
+pyreqscan . --install
+pip install -r requirements.txt
+python main.py
+pip install aiohttp
+python main.py
+pip install aiohttp_socks
+python main.py
+pyreqscan . --install
+pyreqscan
+.\.venv\Scripts\Activate.ps1
+python main.py
+pip install -r requirements.txt
+python main.py
+exit
+python main.py
+pip install -r requirements.txt
+python.exe -m pip install --upgrade pip
+pip install -r requirements.txt
+python main.py
+pip install -r requirements.txt
+python main.py
