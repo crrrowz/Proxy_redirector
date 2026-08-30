@@ -90,8 +90,9 @@ def _build_proxy_url(proxy: dict) -> str:
 async def check_single_proxy(proxy: dict) -> dict:
     """
     فحص بروكسي واحد:
-    1. هل يعمل؟
+    1. هل يعمل؟ (HTTP check)
     2. هل يخفي IP الحقيقي؟ (Anonymity Check)
+    3. هل يمرر HTTPS بدون تلاعب بالشهادة؟ (SSL Check)
     يعيد dict بالنتيجة.
     """
     proxy_id = proxy["id"]
@@ -101,6 +102,7 @@ async def check_single_proxy(proxy: dict) -> dict:
         "alive": False,
         "response_time_ms": None,
         "error": None,
+        "ssl_verified": False,
     }
 
     try:
@@ -154,7 +156,82 @@ async def check_single_proxy(proxy: dict) -> dict:
     except Exception as e:
         result["error"] = str(e)[:80]
 
+    # ═══ فحص SSL: هل البروكسي يمرر HTTPS بدون تلاعب؟ ═══
+    if result["alive"] and getattr(config, "SSL_CHECK_ENABLED", True):
+        result["ssl_verified"] = await _check_ssl(proxy, proxy_url)
+
+    # ═══ GeoIP: اكتشاف البلد إذا غير معروف ═══
+    if result["alive"] and proxy.get("country", "??") == "??":
+        country = await _lookup_country(proxy["ip"])
+        if country:
+            proxy["country"] = country
+            result["country"] = country
+
     return result
+
+
+# ذاكرة تخزين مؤقت للبلدان لتجنب الطلبات المتكررة لنفس الـ IP
+_geo_cache = {}
+
+async def _lookup_country(ip: str) -> Optional[str]:
+    """استعلام عن البلد من IP باستخدام ip-api.com."""
+    if ip in _geo_cache:
+        return _geo_cache[ip]
+    try:
+        async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=5)) as session:
+            async with session.get(f"http://ip-api.com/json/{ip}?fields=countryCode") as resp:
+                if resp.status == 200:
+                    data = await resp.json()
+                    country = data.get("countryCode")
+                    if country:
+                        _geo_cache[ip] = country
+                        return country
+    except Exception as e:
+        logger.debug(f"GeoIP failed for {ip}: {e}")
+    return None
+
+async def _check_ssl(proxy: dict, proxy_url: str) -> bool:
+    """
+    فحص SSL منفصل: يتصل بـ HTTPS_CHECK_URL عبر البروكسي مع تحقق كامل من الشهادة.
+    إذا نجح = البروكسي لا يتدخل في SSL (ممتاز).
+    إذا فشل = البروكسي يعمل MITM أو لا يدعم HTTPS بشكل صحيح.
+    """
+    import ssl as _ssl
+
+    try:
+        ssl_ctx = _ssl.create_default_context()  # يتحقق من الشهادة تلقائياً
+
+        connector = ProxyConnector.from_url(proxy_url, rdns=True, ssl=ssl_ctx)
+        timeout = aiohttp.ClientTimeout(total=config.CHECK_TIMEOUT_SECONDS)
+
+        https_url = getattr(config, "HTTPS_CHECK_URL", "https://httpbin.org/ip")
+
+        async with aiohttp.ClientSession(
+            connector=connector, timeout=timeout
+        ) as session:
+            async with session.get(https_url, ssl=ssl_ctx) as response:
+                if response.status == 200:
+                    logger.info(
+                        f"[SSL ✓] {proxy['id']} ({proxy['ip']}:{proxy['port']}) "
+                        f"— HTTPS verified"
+                    )
+                    return True
+
+    except _ssl.SSLCertVerificationError:
+        logger.warning(
+            f"[SSL ✗] {proxy['id']} ({proxy['ip']}:{proxy['port']}) "
+            f"— MITM detected! Certificate invalid"
+        )
+    except asyncio.TimeoutError:
+        logger.debug(
+            f"[SSL ?] {proxy['id']} — HTTPS check timed out"
+        )
+    except Exception as e:
+        logger.debug(
+            f"[SSL ?] {proxy['id']} — HTTPS check failed: {str(e)[:60]}"
+        )
+
+    return False
 
 
 async def check_batch(proxies: list[dict]) -> list[dict]:

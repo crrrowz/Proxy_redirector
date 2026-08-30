@@ -267,6 +267,20 @@ class Socks5Server:
         else:
             ordered = alive_list
 
+        # ═══ لاتصالات HTTPS: أعطِ الأولوية لـ SSL-verified ═══
+        is_https = target_port == 443
+        if is_https:
+            manager = self.failover.manager
+            ssl_proxies = []
+            non_ssl = []
+            for p in ordered:
+                st = manager.get_proxy_status(p["id"])
+                if st.get("ssl_verified", False):
+                    ssl_proxies.append(p)
+                else:
+                    non_ssl.append(p)
+            ordered = ssl_proxies + non_ssl
+
         # جرب كل بروكسي — بدون قتل
         for proxy_data in ordered[:5]:  # أقصى 5 محاولات
             try:

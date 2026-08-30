@@ -128,6 +128,76 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Discovery Status -->
+                <div class="card" id="discovery-panel" style="margin-top:16px;">
+                    <div class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
+                        <span>🔍 Continuous Discovery</span>
+                        <div style="display:flex; gap:8px; align-items:center;">
+                            <span id="discovery-status-badge" class="badge" style="font-size:11px;">Idle</span>
+                            <button id="btn-discovery-toggle" class="btn sm" onclick="toggleDiscovery()" style="font-size:11px; padding:4px 10px;">⏸ Pause</button>
+                            <button id="btn-discovery-disable" class="btn sm danger" onclick="disableDiscovery()" style="font-size:11px; padding:4px 10px;">■ Stop</button>
+                        </div>
+                    </div>
+                    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:10px;">
+                        <div style="text-align:center;">
+                            <div style="font-size:20px; font-weight:700; color:var(--primary);" id="disc-round">0</div>
+                            <div style="font-size:11px; color:var(--text-muted);">Round</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="font-size:20px; font-weight:700; color:var(--text);" id="disc-checked">0</div>
+                            <div style="font-size:11px; color:var(--text-muted);">Checked</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="font-size:20px; font-weight:700; color:var(--success);" id="disc-alive">0</div>
+                            <div style="font-size:11px; color:var(--text-muted);">Alive Found</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="font-size:20px; font-weight:700; color:#f0c040;" id="disc-ssl">0</div>
+                            <div style="font-size:11px; color:var(--text-muted);">SSL Verified</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:12px;">
+                        <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-muted); margin-bottom:4px;">
+                            <span>Progress</span>
+                            <span id="disc-progress-text">0 / 0</span>
+                        </div>
+                        <div style="background:var(--border); border-radius:4px; height:6px; overflow:hidden;">
+                            <div id="disc-progress-bar" style="background:linear-gradient(90deg,var(--primary),var(--success)); height:100%; width:0%; transition:width 0.5s ease;"></div>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:12px; margin-top:12px; align-items:center;">
+                        <label style="font-size:12px; color:var(--text-muted); white-space:nowrap;">Batch Size</label>
+                        <input type="number" id="disc-batch-size" class="cfg-input" style="width:70px; font-size:12px;" min="5" max="100" value="20" onchange="updateDiscoveryConfig()">
+                        <label style="font-size:12px; color:var(--text-muted); white-space:nowrap;">Delay (sec)</label>
+                        <input type="number" id="disc-delay" class="cfg-input" style="width:70px; font-size:12px;" min="1" max="30" value="3" onchange="updateDiscoveryConfig()">
+                    </div>
+                </div>
+
+                <!-- Online Fetch Status -->
+                <div class="card" style="margin-top:12px;">
+                    <div class="card-title" style="display:flex; justify-content:space-between; align-items:center;">
+                        <span>🌐 Online Proxy Fetch</span>
+                        <span id="fetch-status-badge" class="badge" style="font-size:11px; background:var(--success);">Active</span>
+                    </div>
+                    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:10px;">
+                        <div style="text-align:center;">
+                            <div style="font-size:20px; font-weight:700; color:var(--primary);" id="fetch-total">0</div>
+                            <div style="font-size:11px; color:var(--text-muted);">Total Fetched</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="font-size:20px; font-weight:700; color:var(--success);" id="fetch-added">0</div>
+                            <div style="font-size:11px; color:var(--text-muted);">Added to Pool</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="font-size:20px; font-weight:700; color:var(--text);" id="fetch-sources">4</div>
+                            <div style="font-size:11px; color:var(--text-muted);">Sources</div>
+                        </div>
+                    </div>
+                    <div style="font-size:11px; color:var(--text-muted); margin-top:8px; text-align:center;" id="fetch-last-time">
+                        Next fetch in ~2 min
+                    </div>
+                </div>
             </section>
 
             <!-- ═══ TAB 2: Proxy Pool ═══ -->
@@ -137,10 +207,46 @@
                         <h2 style="font-size:18px;">Proxy Pool</h2>
                         <div id="pool-stats-text" class="subtitle" style="font-size:12px; color:var(--text-muted); margin-top:2px;">Loading...</div>
                     </div>
-                    <div class="toolbar-group">
+                    <div class="toolbar-group" style="gap:8px;">
+                        <span id="manual-lock-badge" style="display:none; font-size:11px; background:var(--warning,#ff9800); color:#000; padding:3px 8px; border-radius:4px; cursor:pointer;" onclick="unlockAutoSwitch()" title="Click to unlock">🔒 Manual</span>
                         <input type="text" class="search-box" id="proxy-search" placeholder="🔍 Search proxies..." oninput="filterProxies()">
+                        <button class="btn primary sm" onclick="toggleCustomProxyForm()" style="font-size:11px; white-space:nowrap;">+ Add Proxy</button>
                     </div>
                 </div>
+
+                <!-- Add Custom Proxy Form -->
+                <div id="custom-proxy-form" class="card" style="display:none; margin-bottom:12px;">
+                    <div class="card-title">➕ Add Custom Proxy</div>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:end;">
+                        <div>
+                            <label style="font-size:11px; color:var(--text-muted);">IP Address</label>
+                            <input type="text" id="custom-ip" class="cfg-input" placeholder="1.2.3.4" style="width:150px;">
+                        </div>
+                        <div>
+                            <label style="font-size:11px; color:var(--text-muted);">Port</label>
+                            <input type="number" id="custom-port" class="cfg-input" placeholder="1080" style="width:80px;">
+                        </div>
+                        <div>
+                            <label style="font-size:11px; color:var(--text-muted);">Type</label>
+                            <select id="custom-type" class="cfg-input" style="width:100px;">
+                                <option value="socks5">SOCKS5</option>
+                                <option value="socks4">SOCKS4</option>
+                                <option value="http">HTTP</option>
+                                <option value="https">HTTPS</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="font-size:11px; color:var(--text-muted);">Username</label>
+                            <input type="text" id="custom-user" class="cfg-input" placeholder="(optional)" style="width:100px;">
+                        </div>
+                        <div>
+                            <label style="font-size:11px; color:var(--text-muted);">Password</label>
+                            <input type="text" id="custom-pass" class="cfg-input" placeholder="(optional)" style="width:100px;">
+                        </div>
+                        <button class="btn success sm" onclick="addCustomProxy()" style="font-size:12px;">✓ Add & Test</button>
+                    </div>
+                </div>
+
                 <div class="card" style="padding:0;">
                     <div class="table-container">
                         <table>
@@ -153,11 +259,13 @@
                                     <th data-sort="alive" class="sortable">Status</th>
                                     <th data-sort="speed_ms" class="sortable">Speed</th>
                                     <th data-sort="score" class="sortable">Score</th>
+                                    <th data-sort="ssl_verified" class="sortable">SSL</th>
                                     <th data-sort="failures" class="sortable">Fails</th>
+                                    <th style="width:60px">Action</th>
                                 </tr>
                             </thead>
                             <tbody id="proxy-table-body">
-                                <tr><td colspan="8" style="text-align:center; color:var(--text-muted)">Loading...</td></tr>
+                                <tr><td colspan="10" style="text-align:center; color:var(--text-muted)">Loading...</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -507,6 +615,28 @@
                                     <input type="checkbox" id="cfg-ANONYMITY_CHECK" class="cfg-input">
                                     <span class="slider"></span>
                                 </label>
+                            </div>
+                            <div class="setting-row">
+                                <label>SSL Check</label>
+                                <label class="switch">
+                                    <input type="checkbox" id="cfg-SSL_CHECK_ENABLED" class="cfg-input">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Discovery Settings -->
+                    <div class="card">
+                        <div class="card-title">🔍 Discovery</div>
+                        <div class="settings-group">
+                            <div class="setting-row">
+                                <label>Batch Size</label>
+                                <input type="number" id="cfg-DISCOVERY_BATCH_SIZE" class="cfg-input" min="5" max="100">
+                            </div>
+                            <div class="setting-row">
+                                <label>Delay Between Batches (sec)</label>
+                                <input type="number" id="cfg-DISCOVERY_DELAY_SECONDS" class="cfg-input" min="1" max="60">
                             </div>
                         </div>
                     </div>

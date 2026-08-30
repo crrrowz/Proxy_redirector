@@ -323,7 +323,7 @@ class HttpProxyServer:
             await self._relay_response(up_reader, writer, up_writer)
 
     async def _connect_via_proxy(self, target_host, target_port):
-        """الاتصال بالهدف عبر قائمة البروكسيات العاملة."""
+        """الاتصال بالهدف عبر قائمة البروكسيات العاملة. يفضّل SSL-verified لـ HTTPS."""
 
         alive_list = self.failover.manager.get_alive_proxies()
 
@@ -344,6 +344,25 @@ class HttpProxyServer:
                     ordered.append(p)
         else:
             ordered = alive_list
+
+        # ═══ لاتصالات HTTPS: أعطِ الأولوية لـ SSL-verified ═══
+        is_https = target_port == 443
+        if is_https:
+            manager = self.failover.manager
+            ssl_proxies = []
+            non_ssl = []
+            for p in ordered:
+                st = manager.get_proxy_status(p["id"])
+                if st.get("ssl_verified", False):
+                    ssl_proxies.append(p)
+                else:
+                    non_ssl.append(p)
+            # SSL-verified أولاً، ثم الباقي كـ fallback
+            ordered = ssl_proxies + non_ssl
+            if ssl_proxies:
+                logger.debug(
+                    f"[HTTP-PROXY] HTTPS → {len(ssl_proxies)} SSL-verified proxies first"
+                )
 
         for proxy_data in ordered[:5]:
             try:

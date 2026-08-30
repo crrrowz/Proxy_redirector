@@ -167,7 +167,7 @@ def render_dashboard(
     ))
 
     # جدول البروكسيات
-    hdr = f"{'#':>3}  {'IP:Port':<22} {'Type':<7} {'Status':<7} {'Speed':>7} {'Score':>6} {'Fail':>5}"
+    hdr = f"{'#':>3}  {'IP:Port':<22} {'Type':<7} {'Status':<7} {'Speed':>7} {'Score':>6} {'SSL':>4} {'Fail':>5}"
     lines.append(_box_line(hdr))
     lines.append(f"  ║  {'─' * (W - 4)}║")
 
@@ -184,10 +184,11 @@ def render_dashboard(
         spd = st.get("response_time_ms")
         spd_s = f"{spd:>5.0f}ms" if spd else "    -- "
         fails = st.get("consecutive_failures", 0)
+        ssl_s = " ✓ " if st.get("ssl_verified", False) else " ✗ "
         marker = "►" if current and p["id"] == current["id"] else " "
 
         row = (
-            f"{marker}{i:>2}  {addr:<22} {ptype:<7} {status_s} {spd_s} {score:>6.1f} {fails:>5d}"
+            f"{marker}{i:>2}  {addr:<22} {ptype:<7} {status_s} {spd_s} {score:>6.1f} {ssl_s} {fails:>5d}"
         )
         lines.append(_box_line(row))
 
@@ -333,6 +334,68 @@ async def maintain_pool(
 
 
 # ──────────────────────────────────────────────
+# Continuous Discovery (background task)
+# ──────────────────────────────────────────────
+async def continuous_discovery(
+    manager: ProxyManager,
+    failover: FailoverHandler,
+    server,
+    http_proxy,
+):
+    """
+    فحص مستمر لجميع البروكسيات بالخلفية.
+    يعمل بشكل مستقل عن حلقة الصيانة.
+    يتوقف تلقائياً عند فحص الكل، ثم يعيد الدورة.
+    """
+    batch_size = getattr(config, "DISCOVERY_BATCH_SIZE", 20)
+    delay = getattr(config, "DISCOVERY_DELAY_SECONDS", 3)
+    round_num = 0
+
+    while True:
+        round_num += 1
+        total_checked = 0
+        total_alive = 0
+        total_ssl = 0
+
+        logger.info(f"[DISCOVERY] Round #{round_num} started — scanning all unchecked proxies")
+
+        while True:
+            unchecked = manager.get_unchecked_proxies(batch_size)
+            if not unchecked:
+                break  # فحص الكل — انتهت الجولة
+
+            disc_results = await check_batch(unchecked)
+            manager.update_status(disc_results)
+
+            batch_alive = sum(1 for r in disc_results if r["alive"])
+            batch_ssl = sum(1 for r in disc_results if r.get("ssl_verified", False))
+            total_checked += len(unchecked)
+            total_alive += batch_alive
+            total_ssl += batch_ssl
+
+            if batch_alive > 0:
+                await failover.refresh_best()
+
+            logger.debug(
+                f"[DISCOVERY] Batch: {len(unchecked)} checked, "
+                f"{batch_alive} alive ({batch_ssl} SSL) — "
+                f"total so far: {total_checked}"
+            )
+
+            await asyncio.sleep(delay)
+
+        logger.info(
+            f"[DISCOVERY] Round #{round_num} complete — "
+            f"{total_checked} checked, {total_alive} alive, {total_ssl} SSL-verified"
+        )
+
+        manager.save_sorted_data_file()
+
+        logger.info(f"[DISCOVERY] Waiting {config.RECHECK_INTERVAL_SECONDS}s before next round...")
+        await asyncio.sleep(config.RECHECK_INTERVAL_SECONDS)
+
+
+# ──────────────────────────────────────────────
 # Main
 # ──────────────────────────────────────────────
 async def main():
@@ -411,9 +474,12 @@ async def main():
 
     render_dashboard(manager, failover, server, http_proxy, "Server started!")
 
-    # 6. Background maintenance
+    # 6. Background tasks — maintenance + continuous discovery
     try:
-        await maintain_pool(manager, failover, server, http_proxy)
+        await asyncio.gather(
+            maintain_pool(manager, failover, server, http_proxy),
+            continuous_discovery(manager, failover, server, http_proxy),
+        )
     except asyncio.CancelledError:
         pass
     finally:

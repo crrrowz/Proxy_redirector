@@ -49,6 +49,16 @@ class ProxyEngine:
         self.running = False
         self.starting = False
         self._maintain_task = None
+        self._discovery_task = None
+        self._fetch_task = None
+        # Discovery state
+        self.discovery_enabled = True
+        self.discovery_paused = False
+        self.discovery_round = 0
+        self.discovery_checked = 0
+        self.discovery_alive_found = 0
+        self.discovery_ssl_found = 0
+        self.discovery_total_unchecked = 0
 
     async def start(self):
         """تشغيل محرك البروكسي."""
@@ -87,6 +97,13 @@ class ProxyEngine:
             # 5. Background maintenance and rapid filling
             self._maintain_task = asyncio.create_task(self._initial_and_maintain_pool(proxies))
 
+            # 6. Continuous discovery
+            self._discovery_task = asyncio.create_task(self._continuous_discovery())
+
+            # 7. Online proxy fetch
+            if getattr(config, 'FETCH_ENABLED', True):
+                self._fetch_task = asyncio.create_task(self._online_fetch_loop())
+
             logger.info("[ENGINE] Servers started instantly! Searching for proxies in background...")
         finally:
             self.starting = False
@@ -96,12 +113,13 @@ class ProxyEngine:
         if not self.running:
             return
 
-        if self._maintain_task:
-            self._maintain_task.cancel()
-            try:
-                await self._maintain_task
-            except asyncio.CancelledError:
-                pass
+        for task in [self._maintain_task, self._discovery_task, self._fetch_task]:
+            if task:
+                task.cancel()
+                try:
+                    await task
+                except asyncio.CancelledError:
+                    pass
 
         if self.socks5:
             await self.socks5.stop()
@@ -200,6 +218,135 @@ class ProxyEngine:
 
             await self.failover.refresh_best()
 
+    async def _continuous_discovery(self):
+        """فحص مستمر لجميع البروكسيات بالخلفية."""
+        from core.proxy_checker import check_batch
+
+        batch_size = getattr(config, "DISCOVERY_BATCH_SIZE", 20)
+        delay = getattr(config, "DISCOVERY_DELAY_SECONDS", 3)
+
+        while True:
+            if not self.discovery_enabled:
+                await asyncio.sleep(2)
+                continue
+
+            self.discovery_round += 1
+            self.discovery_checked = 0
+            self.discovery_alive_found = 0
+            self.discovery_ssl_found = 0
+
+            # حساب عدد البروكسيات غير المفحوصة
+            if self.manager:
+                all_unchecked = [p for p in self.manager.proxies if p["id"] not in self.manager.status]
+                self.discovery_total_unchecked = len(all_unchecked)
+
+            logger.info(f"[DISCOVERY] Round #{self.discovery_round} — {self.discovery_total_unchecked} unchecked")
+
+            while True:
+                # تحقق من الإيقاف المؤقت
+                while self.discovery_paused:
+                    await asyncio.sleep(1)
+
+                if not self.discovery_enabled:
+                    break
+
+                # قراءة الإعدادات الحية
+                batch_size = getattr(config, "DISCOVERY_BATCH_SIZE", 20)
+                delay = getattr(config, "DISCOVERY_DELAY_SECONDS", 3)
+
+                unchecked = self.manager.get_unchecked_proxies(batch_size)
+                if not unchecked:
+                    break
+
+                results = await check_batch(unchecked)
+                self.manager.update_status(results)
+
+                batch_alive = sum(1 for r in results if r["alive"])
+                batch_ssl = sum(1 for r in results if r.get("ssl_verified", False))
+                self.discovery_checked += len(unchecked)
+                self.discovery_alive_found += batch_alive
+                self.discovery_ssl_found += batch_ssl
+
+                if batch_alive > 0 and self.failover:
+                    await self.failover.refresh_best()
+
+                await asyncio.sleep(delay)
+
+            # انتهت الجولة
+            logger.info(
+                f"[DISCOVERY] Round #{self.discovery_round} done — "
+                f"{self.discovery_checked} checked, {self.discovery_alive_found} alive, "
+                f"{self.discovery_ssl_found} SSL"
+            )
+
+            if self.manager:
+                self.manager.save_sorted_data_file()
+
+            await asyncio.sleep(config.RECHECK_INTERVAL_SECONDS)
+
+    async def _online_fetch_loop(self):
+        """جلب بروكسيات من الإنترنت بشكل دوري."""
+        from core.proxy_fetcher import ProxyFetcher
+        from core.proxy_checker import check_batch
+
+        fetcher = ProxyFetcher.get_instance()
+
+        # سجّل البروكسيات الحالية لمنع التكرار
+        if self.manager:
+            for p in self.manager.proxies:
+                fetcher.add_known(p["ip"], p["port"])
+
+        logger.info(f"[FETCH] Online fetch started — interval: {fetcher.fetch_interval}s")
+
+        while True:
+            if not getattr(config, 'FETCH_ENABLED', True):
+                await asyncio.sleep(10)
+                continue
+
+            try:
+                new_proxies = await fetcher.fetch_all()
+
+                if new_proxies:
+                    # أضف للمدير
+                    added = 0
+                    for p in new_proxies:
+                        proxy = self.manager.add_custom_proxy(
+                            p["ip"], p["port"], p["type"]
+                        )
+                        if proxy:
+                            added += 1
+
+                    fetcher.total_added += added
+                    logger.info(
+                        f"[FETCH] Added {added} new proxies — "
+                        f"checking in batches..."
+                    )
+
+                    # فحص البروكسيات الجديدة على دفعات
+                    batch_size = getattr(config, "DISCOVERY_BATCH_SIZE", 20)
+                    new_ids = {f"custom_{p['ip']}_{p['port']}" for p in new_proxies}
+                    to_check = [
+                        p for p in self.manager.proxies
+                        if p["id"] in new_ids and p["id"] not in self.manager.status
+                    ]
+
+                    for i in range(0, len(to_check), batch_size):
+                        batch = to_check[i:i + batch_size]
+                        results = await check_batch(batch)
+                        self.manager.update_status(results)
+
+                        alive = sum(1 for r in results if r["alive"])
+                        if alive > 0 and self.failover:
+                            await self.failover.refresh_best()
+
+                        await asyncio.sleep(1)
+
+            except Exception as e:
+                logger.error(f"[FETCH] Error: {e}")
+
+            interval = getattr(config, "FETCH_INTERVAL_SECONDS", 120)
+            await asyncio.sleep(interval)
+
     def get_status(self) -> dict:
         """حالة السيرفر الحالية."""
         local_ips = []
@@ -217,11 +364,14 @@ class ProxyEngine:
             st = self.manager.get_proxy_status(current["id"])
             spd = st.get("response_time_ms")
             active_proxy = {
+                "id": current["id"],
                 "ip": current["ip"],
                 "port": current["port"],
                 "type": current["type"].upper(),
                 "speed_ms": spd,
+                "ssl_verified": st.get("ssl_verified", False),
                 "switches": self.failover.switch_count,
+                "manual_locked": self.failover.is_manual_locked,
             }
 
         pool = self.manager.get_pool_summary() if self.manager else {}
@@ -241,7 +391,26 @@ class ProxyEngine:
             "active_proxy": active_proxy,
             "socks5_connections": getattr(self.socks5, 'active_connections', 0) if self.socks5 else 0,
             "http_connections": getattr(self.http_proxy, 'active_connections', 0) if self.http_proxy else 0,
+            "discovery": {
+                "enabled": self.discovery_enabled,
+                "paused": self.discovery_paused,
+                "round": self.discovery_round,
+                "checked": self.discovery_checked,
+                "alive_found": self.discovery_alive_found,
+                "ssl_found": self.discovery_ssl_found,
+                "total_unchecked": self.discovery_total_unchecked,
+                "batch_size": getattr(config, 'DISCOVERY_BATCH_SIZE', 20),
+                "delay": getattr(config, 'DISCOVERY_DELAY_SECONDS', 3),
+            },
+            "fetch": self._get_fetch_stats(),
         }
+
+    def _get_fetch_stats(self) -> dict:
+        try:
+            from core.proxy_fetcher import ProxyFetcher
+            return ProxyFetcher.get_instance().get_stats()
+        except Exception:
+            return {"enabled": False}
 
     def get_clients(self) -> list:
         """العملاء المتصلون."""
@@ -264,6 +433,7 @@ class ProxyEngine:
             p = item["proxy"]
             st = item["status"]
             result.append({
+                "id": p["id"],
                 "ip": p["ip"],
                 "port": p["port"],
                 "type": p["type"].upper(),
@@ -272,6 +442,7 @@ class ProxyEngine:
                 "speed_ms": st.get("response_time_ms"),
                 "score": item["score"],
                 "failures": st.get("consecutive_failures", 0),
+                "ssl_verified": st.get("ssl_verified", False),
                 "active": bool(current and p["id"] == current["id"]),
             })
         return result
@@ -340,6 +511,19 @@ class APIHandler(SimpleHTTPRequestHandler):
         elif path == "/api/analytics/countries":
             pa = ProxyAnalytics.get_instance()
             self._json(pa.get_country_stats())
+        elif path == "/api/discovery":
+            e = get_engine()
+            self._json({
+                "enabled": e.discovery_enabled,
+                "paused": e.discovery_paused,
+                "round": e.discovery_round,
+                "checked": e.discovery_checked,
+                "alive_found": e.discovery_alive_found,
+                "ssl_found": e.discovery_ssl_found,
+                "total_unchecked": e.discovery_total_unchecked,
+                "batch_size": getattr(config, 'DISCOVERY_BATCH_SIZE', 20),
+                "delay": getattr(config, 'DISCOVERY_DELAY_SECONDS', 3),
+            })
         else:
             super().do_GET()
 
@@ -392,6 +576,69 @@ class APIHandler(SimpleHTTPRequestHandler):
         elif path == "/api/config":
             changed = config.update_config(body)
             self._json({"success": True, "changed": changed})
+        elif path == "/api/discovery/toggle":
+            e = get_engine()
+            action = body.get("action", "toggle")
+            if action == "pause":
+                e.discovery_paused = True
+            elif action == "resume":
+                e.discovery_paused = False
+            elif action == "enable":
+                e.discovery_enabled = True
+                e.discovery_paused = False
+            elif action == "disable":
+                e.discovery_enabled = False
+            self._json({"success": True, "enabled": e.discovery_enabled, "paused": e.discovery_paused})
+        elif path == "/api/discovery/config":
+            updates = {}
+            if "batch_size" in body:
+                updates["DISCOVERY_BATCH_SIZE"] = int(body["batch_size"])
+            if "delay" in body:
+                updates["DISCOVERY_DELAY_SECONDS"] = int(body["delay"])
+            if updates:
+                config.update_config(updates)
+            self._json({"success": True, "batch_size": config.DISCOVERY_BATCH_SIZE, "delay": config.DISCOVERY_DELAY_SECONDS})
+        elif path == "/api/proxy/select":
+            proxy_id = body.get("id", "")
+            e = get_engine()
+            if not e.manager or not e.failover:
+                self._json({"error": "Engine not running"}, 400)
+                return
+            proxy = e.manager._proxies_by_id.get(proxy_id)
+            if not proxy:
+                self._json({"error": "Proxy not found"}, 404)
+                return
+            self._run_async(e.failover.force_select(proxy), wait=True)
+            self._json({"success": True, "selected": proxy_id})
+        elif path == "/api/proxy/unlock":
+            e = get_engine()
+            if e.failover:
+                e.failover.unlock_auto()
+            self._json({"success": True})
+        elif path == "/api/proxy/add":
+            e = get_engine()
+            if not e.manager:
+                self._json({"error": "Engine not running"}, 400)
+                return
+            ip = body.get("ip", "").strip()
+            port = body.get("port", 0)
+            ptype = body.get("type", "socks5")
+            username = body.get("username") or None
+            password = body.get("password") or None
+            if not ip or not port:
+                self._json({"error": "IP and port required"}, 400)
+                return
+            proxy = e.manager.add_custom_proxy(ip, int(port), ptype, username, password)
+            # فحص البروكسي فوراً
+            async def _check_and_activate():
+                from core.proxy_checker import check_single_proxy
+                result = await check_single_proxy(proxy)
+                e.manager.update_status([result])
+                if result["alive"]:
+                    await e.failover.force_select(proxy)
+                return result
+            self._run_async(_check_and_activate())
+            self._json({"success": True, "id": proxy["id"]})
         else:
             self._json({"error": "Not found"}, 404)
 

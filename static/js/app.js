@@ -268,7 +268,7 @@ function renderProxyPool(status, proxies) {
 function renderProxyTable(proxies) {
     const tbody = document.getElementById('proxy-table-body');
     if (!proxies || proxies.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:var(--text-muted)">No proxies loaded</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="10" style="text-align:center; color:var(--text-muted)">No proxies loaded</td></tr>`;
         return;
     }
 
@@ -281,6 +281,12 @@ function renderProxyTable(proxies) {
             : '<span class="badge off">DN</span>';
         const spd = p.speed_ms ? Math.round(p.speed_ms) + 'ms' : '--';
         const rowBg = p.active ? 'background:var(--primary-glow);' : '';
+        const sslBadge = p.ssl_verified
+            ? '<span style="color:#4caf50;">✓</span>'
+            : '<span style="color:var(--text-muted);">✗</span>';
+        const selectBtn = p.active
+            ? '<span style="color:var(--success); font-size:11px;">●</span>'
+            : `<button class="btn sm" style="font-size:10px; padding:2px 6px;" onclick="selectProxy('${p.id}')">Use</button>`;
 
         html += `
             <tr style="${rowBg}">
@@ -291,7 +297,9 @@ function renderProxyTable(proxies) {
                 <td>${statusBadge}</td>
                 <td>${spd}</td>
                 <td>${p.score.toFixed(1)}</td>
+                <td>${sslBadge}</td>
                 <td>${p.failures}</td>
+                <td>${selectBtn}</td>
             </tr>
         `;
     });
@@ -701,6 +709,9 @@ async function updateDashboard() {
         renderServerInfo(status);
         const proxies = await fetchJSON('/api/proxies');
         renderProxyPool(status, proxies);
+        renderDiscovery(status.discovery);
+        renderFetchStats(status.fetch);
+        updateManualLockBadge(status);
     }
 
     const clients = await fetchJSON('/api/clients');
@@ -942,6 +953,211 @@ function reRenderTable(tableId) {
         case 'traffic-table-body': renderTrafficTable(_trafficCache); break;
         case 'top-proxies-body': renderAnalyticsTop(_analyticsTopCache); break;
         case 'country-stats-body': renderAnalyticsCountries(_analyticsCountriesCache); break;
+    }
+}
+
+// ══════════════════════════════════════════════
+// Manual Proxy Controls
+// ══════════════════════════════════════════════
+async function selectProxy(proxyId) {
+    try {
+        await fetch('/api/proxy/select', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: proxyId }),
+        });
+    } catch (e) { console.error('selectProxy:', e); }
+}
+
+async function unlockAutoSwitch() {
+    try {
+        await fetch('/api/proxy/unlock', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: '{}',
+        });
+    } catch (e) { console.error('unlockAutoSwitch:', e); }
+}
+
+function toggleCustomProxyForm() {
+    const form = document.getElementById('custom-proxy-form');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+}
+
+async function addCustomProxy() {
+    const ip = document.getElementById('custom-ip').value.trim();
+    const port = parseInt(document.getElementById('custom-port').value) || 0;
+    const type = document.getElementById('custom-type').value;
+    const username = document.getElementById('custom-user').value.trim();
+    const password = document.getElementById('custom-pass').value.trim();
+
+    if (!ip || !port) {
+        alert('IP and Port are required');
+        return;
+    }
+
+    try {
+        const res = await fetch('/api/proxy/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ip, port, type, username: username || null, password: password || null }),
+        });
+        const data = await res.json();
+        if (data.success) {
+            // Clear form
+            document.getElementById('custom-ip').value = '';
+            document.getElementById('custom-port').value = '';
+            document.getElementById('custom-user').value = '';
+            document.getElementById('custom-pass').value = '';
+            document.getElementById('custom-proxy-form').style.display = 'none';
+        }
+    } catch (e) { console.error('addCustomProxy:', e); }
+}
+
+// Update manual lock badge
+function updateManualLockBadge(status) {
+    const badge = document.getElementById('manual-lock-badge');
+    if (!badge) return;
+    const ap = status && status.active_proxy;
+    if (ap && ap.manual_locked) {
+        badge.style.display = '';
+    } else {
+        badge.style.display = 'none';
+    }
+}
+
+// ══════════════════════════════════════════════
+// Discovery Controls
+// ══════════════════════════════════════════════
+function renderDiscovery(disc) {
+    if (!disc) return;
+
+    // Stats
+    const el = (id) => document.getElementById(id);
+    el('disc-round').innerText = disc.round || 0;
+    el('disc-checked').innerText = disc.checked || 0;
+    el('disc-alive').innerText = disc.alive_found || 0;
+    el('disc-ssl').innerText = disc.ssl_found || 0;
+
+    // Progress bar
+    const total = (disc.checked || 0) + (disc.total_unchecked || 0);
+    const pct = total > 0 ? Math.round((disc.checked / total) * 100) : 0;
+    el('disc-progress-bar').style.width = pct + '%';
+    el('disc-progress-text').innerText = `${disc.checked || 0} / ${total}`;
+
+    // Status badge
+    const badge = el('discovery-status-badge');
+    const btnToggle = el('btn-discovery-toggle');
+    const btnDisable = el('btn-discovery-disable');
+
+    if (!disc.enabled) {
+        badge.innerText = 'Stopped';
+        badge.style.background = 'var(--danger, #e53935)';
+        btnToggle.style.display = 'none';
+        btnDisable.innerText = '▶ Start';
+        btnDisable.className = 'btn sm success';
+        btnDisable.onclick = () => enableDiscovery();
+    } else if (disc.paused) {
+        badge.innerText = 'Paused';
+        badge.style.background = 'var(--warning, #ff9800)';
+        btnToggle.innerText = '▶ Resume';
+        btnToggle.style.display = '';
+        btnDisable.innerText = '■ Stop';
+        btnDisable.className = 'btn sm danger';
+        btnDisable.onclick = () => disableDiscovery();
+    } else {
+        badge.innerText = 'Scanning';
+        badge.style.background = 'var(--success, #4caf50)';
+        btnToggle.innerText = '⏸ Pause';
+        btnToggle.style.display = '';
+        btnDisable.innerText = '■ Stop';
+        btnDisable.className = 'btn sm danger';
+        btnDisable.onclick = () => disableDiscovery();
+    }
+
+    // Sync input values (only if not focused)
+    const batchInput = el('disc-batch-size');
+    const delayInput = el('disc-delay');
+    if (document.activeElement !== batchInput) batchInput.value = disc.batch_size || 20;
+    if (document.activeElement !== delayInput) delayInput.value = disc.delay || 3;
+}
+
+async function toggleDiscovery() {
+    try {
+        const res = await fetch('/api/discovery', { cache: 'no-store' });
+        const disc = await res.json();
+        const action = disc.paused ? 'resume' : 'pause';
+        await fetch('/api/discovery/toggle', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action }),
+        });
+    } catch (e) { console.error('toggleDiscovery:', e); }
+}
+
+async function disableDiscovery() {
+    try {
+        await fetch('/api/discovery/toggle', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'disable' }),
+        });
+    } catch (e) { console.error('disableDiscovery:', e); }
+}
+
+async function enableDiscovery() {
+    try {
+        await fetch('/api/discovery/toggle', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'enable' }),
+        });
+    } catch (e) { console.error('enableDiscovery:', e); }
+}
+
+async function updateDiscoveryConfig() {
+    try {
+        const batchSize = parseInt(document.getElementById('disc-batch-size').value) || 20;
+        const delay = parseInt(document.getElementById('disc-delay').value) || 3;
+        await fetch('/api/discovery/config', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ batch_size: batchSize, delay: delay }),
+        });
+    } catch (e) { console.error('updateDiscoveryConfig:', e); }
+}
+
+// ══════════════════════════════════════════════
+// Online Fetch Stats
+// ══════════════════════════════════════════════
+function renderFetchStats(fetch) {
+    if (!fetch) return;
+    const el = (id) => document.getElementById(id);
+
+    el('fetch-total').innerText = fetch.total_fetched || 0;
+    el('fetch-added').innerText = fetch.total_added || 0;
+    el('fetch-sources').innerText = fetch.sources_count || 0;
+
+    const badge = el('fetch-status-badge');
+    if (fetch.enabled) {
+        badge.innerText = 'Active';
+        badge.style.background = 'var(--success, #4caf50)';
+    } else {
+        badge.innerText = 'Off';
+        badge.style.background = 'var(--text-muted)';
+    }
+
+    // آخر جلب
+    const lastEl = el('fetch-last-time');
+    if (fetch.last_fetch_time > 0) {
+        const ago = Math.round((Date.now() / 1000) - fetch.last_fetch_time);
+        if (ago < 60) {
+            lastEl.innerText = `Last fetch: ${ago}s ago — got ${fetch.last_fetch_count} proxies`;
+        } else {
+            lastEl.innerText = `Last fetch: ${Math.round(ago / 60)}m ago — got ${fetch.last_fetch_count} proxies`;
+        }
+    } else {
+        lastEl.innerText = `Next fetch in ~${Math.round((fetch.interval_seconds || 120) / 60)} min`;
     }
 }
 

@@ -105,6 +105,33 @@ class ProxyManager:
         self._load_status()
         return self.proxies
 
+    def add_custom_proxy(self, ip: str, port: int, ptype: str = "socks5",
+                         username: str = None, password: str = None) -> dict:
+        """إضافة بروكسي يدوي أثناء التشغيل."""
+        proxy_id = f"custom_{ip}_{port}"
+
+        # تجنب التكرار
+        if proxy_id in self._proxies_by_id:
+            return self._proxies_by_id[proxy_id]
+
+        proxy = {
+            "id": proxy_id,
+            "ip": ip,
+            "port": int(port),
+            "type": ptype.lower(),
+            "username": username,
+            "password": password,
+            "country": "??",
+            "city": "Custom",
+        }
+
+        self.proxies.append(proxy)
+        self._all_proxies.append(proxy)
+        self._proxies_by_id[proxy_id] = proxy
+
+        logger.info(f"[CUSTOM] Added: {proxy_id} ({ip}:{port} {ptype})")
+        return proxy
+
     def _load_status(self):
         """تحميل حالة البروكسيات المحفوظة."""
         filepath = os.path.join(
@@ -148,6 +175,7 @@ class ProxyManager:
                     "last_success": None,
                     "total_checks": 0,
                     "total_successes": 0,
+                    "ssl_verified": False,
                 }
 
             entry = self.status[proxy_id]
@@ -160,6 +188,9 @@ class ProxyManager:
                 entry["consecutive_failures"] = 0  # ← يُصفّر الفشل عند النجاح
                 entry["last_success"] = now
                 entry["total_successes"] += 1
+                # تحديث حالة SSL
+                if "ssl_verified" in result:
+                    entry["ssl_verified"] = result["ssl_verified"]
             else:
                 entry["alive"] = False
                 entry["response_time_ms"] = None
@@ -245,6 +276,11 @@ class ProxyManager:
         if s["alive"]:
             score += config.SCORE_ALIVE
 
+        # SSL verified = bonus كبير
+        ssl_bonus = getattr(config, "SCORE_SSL_BONUS", 30)
+        if s.get("ssl_verified", False):
+            score += ssl_bonus
+
         # السرعة: 0-25
         if s["response_time_ms"] is not None and s["response_time_ms"] > 0:
             speed_ratio = max(0, 1 - (s["response_time_ms"] / config.SPEED_THRESHOLD_MS))
@@ -298,16 +334,21 @@ class ProxyManager:
         return alive[0] if alive else None
 
     def get_fastest_proxy(self) -> Optional[dict]:
-        """إرجاع أسرع بروكسي من حيث الاستجابة (ping)."""
+        """
+        إرجاع أفضل بروكسي: يفضّل SSL-verified أولاً، ثم الأسرع.
+        """
         alive = self.get_alive_proxies()
         if not alive:
             return None
         
-        # ترتيب حسب السرعة (الأقل هو الأفضل)
-        def get_speed(p):
-            return self.status.get(p["id"], {}).get("response_time_ms") or 9999.0
+        # ترتيب: SSL-verified أولاً، ثم الأسرع
+        def sort_key(p):
+            st = self.status.get(p["id"], {})
+            is_ssl = 0 if st.get("ssl_verified", False) else 1  # 0 = أولاً
+            speed = st.get("response_time_ms") or 9999.0
+            return (is_ssl, speed)
             
-        alive.sort(key=get_speed)
+        alive.sort(key=sort_key)
         return alive[0]
 
     def get_next_proxy(self, current_id: str) -> Optional[dict]:
@@ -392,3 +433,60 @@ class ProxyManager:
         result = [{"code": code, "count": count} for code, count in counts.items()]
         result.sort(key=lambda x: x["count"], reverse=True)
         return result
+
+    def save_sorted_data_file(self):
+        """
+        إعادة ترتيب ملف data.json حسب النقاط (الأفضل أولاً).
+        عند إعادة التشغيل، البحث الأولي يجد الأفضل فوراً.
+        """
+        filepath = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            config.PROXIES_FILE,
+        )
+
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            if isinstance(data, list):
+                raw_list = data
+                is_wrapped = False
+            elif isinstance(data, dict) and "proxies" in data:
+                raw_list = data["proxies"]
+                is_wrapped = True
+            else:
+                return
+
+            # بناء فهرس: (ip, port) → نقاط
+            score_map = {}
+            for i, raw in enumerate(raw_list):
+                try:
+                    normalized = _normalize_proxy(raw, i)
+                    pid = normalized["id"]
+                    score_map[i] = self._calculate_score(pid)
+                except (KeyError, ValueError):
+                    score_map[i] = -999  # غير صالح → آخر القائمة
+
+            # ترتيب: الأعلى نقاطاً أولاً
+            sorted_indices = sorted(score_map.keys(), key=lambda idx: score_map[idx], reverse=True)
+            sorted_list = [raw_list[idx] for idx in sorted_indices]
+
+            # حفظ
+            if is_wrapped:
+                data["proxies"] = sorted_list
+                output = data
+            else:
+                output = sorted_list
+
+            with open(filepath, "w", encoding="utf-8") as f:
+                json.dump(output, f, ensure_ascii=False, separators=(",", ":"))
+
+            # عدّ البروكسيات المفحوصة والعاملة في المقدمة
+            top_alive = sum(1 for idx in sorted_indices[:10] if score_map[idx] > 0)
+            logger.info(
+                f"[SORT] data.json reordered — top 10 have {top_alive} scored proxies"
+            )
+
+        except Exception as e:
+            logger.error(f"[SORT] Failed to reorder data.json: {e}")
+

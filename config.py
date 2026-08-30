@@ -66,6 +66,19 @@ _DEFAULTS = {
     "COUNTRY_FILTER": "GLOBAL",        # ISO 2-letter code or GLOBAL
     "MAX_SPEED_MS": 0,                 # 0 = no limit, e.g. 200 = reject > 200ms
 
+    # SSL Check
+    "SSL_CHECK_ENABLED": True,
+    "HTTPS_CHECK_URL": "https://httpbin.org/ip",
+    "SCORE_SSL_BONUS": 30,             # نقاط إضافية للبروكسيات SSL-verified
+
+    # Discovery
+    "DISCOVERY_BATCH_SIZE": 20,        # عدد البروكسيات الجديدة المفحوصة كل دفعة
+    "DISCOVERY_DELAY_SECONDS": 3,      # فاصل بين كل دفعة اكتشاف (ثوان)
+
+    # Online Fetch
+    "FETCH_ENABLED": True,
+    "FETCH_INTERVAL_SECONDS": 120,     # جلب بروكسيات جديدة من الإنترنت كل 2 دقيقة
+
     # Scoring
     "SCORE_ALIVE": 50,
     "SCORE_SPEED_MAX": 25,

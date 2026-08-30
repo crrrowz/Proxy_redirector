@@ -32,14 +32,16 @@ class FailoverHandler:
         return self._switch_count
 
     async def initialize(self):
-        """اختيار أسرع بروكسي كبداية."""
+        """اختيار أفضل بروكسي (يفضّل SSL-verified) كبداية."""
         async with self._lock:
             best = self.manager.get_fastest_proxy()
             if best:
                 self._current_proxy = best
+                st = self.manager.get_proxy_status(best["id"])
+                ssl_tag = " [SSL ✓]" if st.get("ssl_verified", False) else ""
                 logger.info(
                     f"[INIT] Active proxy: {best['id']} "
-                    f"({best['ip']}:{best['port']} {best['type']})"
+                    f"({best['ip']}:{best['port']} {best['type']}){ssl_tag}"
                 )
             else:
                 logger.warning("[INIT] No working proxy available yet")
@@ -60,6 +62,8 @@ class FailoverHandler:
         بينما النشط فشل. لا يقتل أحداً.
         """
         async with self._lock:
+            if getattr(self, '_manual_lock', False):
+                return  # الاختيار اليدوي مقفل — لا تغيّر
             if (
                 self._current_proxy is None
                 or better_proxy["id"] != self._current_proxy["id"]
@@ -79,6 +83,8 @@ class FailoverHandler:
         يُستدعى من الـ checker فقط.
         """
         async with self._lock:
+            if getattr(self, '_manual_lock', False):
+                return  # الاختيار اليدوي مقفل
             best = self.manager.get_fastest_proxy()
             if best is None:
                 if self._current_proxy is not None:
@@ -99,9 +105,32 @@ class FailoverHandler:
                     f"({best['ip']}:{best['port']})"
                 )
 
+    async def force_select(self, proxy: dict):
+        """اختيار يدوي لبروكسي معيّن — يقفل الاختيار التلقائي."""
+        async with self._lock:
+            old_id = self._current_proxy["id"] if self._current_proxy else "None"
+            self._current_proxy = proxy
+            self._manual_lock = True
+            self._switch_count += 1
+            self._last_switch_time = time.time()
+            logger.info(
+                f"[MANUAL] Forced: {old_id} -> {proxy['id']} "
+                f"({proxy['ip']}:{proxy['port']}) — auto-switch disabled"
+            )
+
+    def unlock_auto(self):
+        """إعادة تفعيل الاختيار التلقائي."""
+        self._manual_lock = False
+        logger.info("[MANUAL] Auto-switch re-enabled")
+
+    @property
+    def is_manual_locked(self) -> bool:
+        return getattr(self, '_manual_lock', False)
+
     def get_status_summary(self) -> dict:
         return {
             "current_proxy": self._current_proxy,
             "switch_count": self._switch_count,
             "last_switch": self._last_switch_time,
+            "manual_locked": self.is_manual_locked,
         }
